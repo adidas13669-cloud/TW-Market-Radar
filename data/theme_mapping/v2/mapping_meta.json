@@ -1,0 +1,8 @@
+{
+  "mapping_version": "v2-tax-2",
+  "mapping_source": "data/theme_mapping/v2",
+  "effective_from": "2026-06-01",
+  "effective_to": null,
+  "production_ready": false,
+  "notes": "Hierarchical Taiwan equity taxonomy (L1 industry / L2 supply chain / L3 investment theme). Curated many-to-many membership plus prefix/name coverage expansion. Not an official TWSE/TPEx file."
+}

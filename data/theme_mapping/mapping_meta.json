@@ -1,0 +1,7 @@
+{
+  "mapping_version": "seed-v1",
+  "mapping_source": "data/theme_mapping/seed_themes.csv",
+  "effective_from": "2026-06-01",
+  "production_ready": false,
+  "notes": "Development seed: 5 themes and 9 tickers. Not a production Taiwan sector taxonomy."
+}
