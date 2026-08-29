@@ -70,3 +70,15 @@ def test_latest_radar_and_emerging_and_history():
     divergence = client.get("/api/v1/radar/divergence")
     assert divergence.status_code == 200
     assert isinstance(divergence.json(), list)
+
+    meta = client.get("/api/v1/radar/meta")
+    assert meta.status_code == 200
+    assert meta.json()["session_dates"]
+    assert meta.json()["themes"]
+
+    latest_l3 = client.get("/api/v1/radar/sectors/latest?theme_level=3")
+    assert latest_l3.status_code == 200
+    assert {row["theme_id"] for row in latest_l3.json()} == {"SEMI", "AI", "SHIP"}
+    assert all(row.get("theme_level") == 3 for row in latest_l3.json())
+    assert "score_delta" in latest_l3.json()[0]
+

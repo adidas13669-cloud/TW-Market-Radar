@@ -67,10 +67,18 @@ without fabricating zeros. Incomplete 20-session history leaves `avg_20d` /
 Run the API:
 
 ```bash
-PYTHONPATH=backend uvicorn app.main:app --reload
+PYTHONPATH=backend uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 ```
 
 Health check: `GET /health`.
+
+Stage 11 dashboard preview (`frontend/`, this branch):
+
+```bash
+cd frontend && npm install && npm run dev -- --port 3000
+```
+
+The Next.js app proxies `/api` and `/health` to `http://127.0.0.1:8000`. Open `http://localhost:3000`. This is a visual preview only.
 
 Radar endpoints (after data is ingested and `recompute` has run):
 

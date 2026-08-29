@@ -10,6 +10,29 @@ class HealthResponse(BaseModel):
     service: str = "tw-market-radar"
 
 
+class ThemeMeta(BaseModel):
+    theme_id: str
+    name: str
+    theme_level: int | None = None
+    parent_theme_id: str | None = None
+    theme_category: str | None = None
+    concentrated_ok: bool = False
+
+
+class RadarMetaResponse(BaseModel):
+    asof: date | None = None
+    mapping_version: str | None = None
+    production_ready: bool = False
+    mapping_source: str | None = None
+    notes: str | None = None
+    session_dates: list[date] = Field(default_factory=list)
+    themes: list[ThemeMeta] = Field(default_factory=list)
+    estimated_notional_caveat: str = (
+        "Institutional notional may be estimated as shares × close when the exchange "
+        "publishes share prints rather than TWD."
+    )
+
+
 class SectorRadarRow(BaseModel):
     theme_id: str
     theme_name: str | None = None
@@ -42,10 +65,16 @@ class SectorRadarRow(BaseModel):
     rank_excluded: bool = False
     mapping_version: str | None = None
     theme_level: int | None = None
+    parent_theme_id: str | None = None
+    theme_category: str | None = None
+    concentrated_ok: bool = False
+    parent_chain: list[str] = Field(default_factory=list)
+    score_delta: float | None = None
 
 
 class ConstituentRow(BaseModel):
     security_id: str
+    name: str | None = None
     trade_date: date
     institutional_flow: float | None = None
     flow_5d: float | None = None
@@ -62,6 +91,7 @@ class ConstituentRow(BaseModel):
 class SectorDetailResponse(BaseModel):
     sector: SectorRadarRow
     constituents: list[ConstituentRow] = Field(default_factory=list)
+    parent_chain: list[ThemeMeta] = Field(default_factory=list)
 
 
 class SectorHistoryResponse(BaseModel):
