@@ -60,6 +60,7 @@ class Settings(BaseSettings):
     weight_volume_expansion: float = Field(default=0.15)
     weight_continuity: float = Field(default=0.10)
     weight_margin: float = Field(default=0.05)
+    min_coverage_ratio: float = Field(default=0.80)
 
     @property
     def score_weights(self) -> ScoreWeights:

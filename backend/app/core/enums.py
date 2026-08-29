@@ -31,6 +31,14 @@ class QuadrantLabel(StrEnum):
     EXIT = "Exit"
 
 
+class IngestStatus(StrEnum):
+    SUCCESS = "SUCCESS"
+    HOLIDAY = "HOLIDAY"
+    NO_DATA = "NO_DATA"
+    PROVIDER_ERROR = "PROVIDER_ERROR"
+    SKIPPED = "SKIPPED"
+
+
 QUADRANT_LABELS: dict[Quadrant, QuadrantLabel] = {
     Quadrant.STRONG_INFLOW: QuadrantLabel.TIDE,
     Quadrant.SLOWING_INFLOW: QuadrantLabel.ROTATION,

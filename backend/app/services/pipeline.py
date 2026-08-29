@@ -6,7 +6,8 @@ from dataclasses import dataclass
 
 import pandas as pd
 
-from app.core.config import ScoreWeights
+from app.core.config import ScoreWeights, get_settings
+from app.services.coverage import attach_coverage
 from app.services.institutional_flow import aggregate_sector_daily_flow
 from app.services.normalize import to_canonical_flow, to_margin_notional
 from app.services.ranking_engine import rank_divergence, rank_emerging, rank_sectors
@@ -85,6 +86,13 @@ def run_calculation(
     sector_metrics = compute_entity_timeseries_metrics(sector_daily, "theme_id")
     sector_metrics = score_cross_section(sector_metrics, weights=weights)
     sector_metrics = attach_emerging_metric(sector_metrics, entity_col="theme_id", lag=emerging_lag)
+    sector_metrics = attach_coverage(
+        sector_metrics,
+        snapshot.mapping,
+        quotes,
+        stock_daily,
+        min_coverage=get_settings().min_coverage_ratio,
+    )
 
     if snapshot.themes is not None and not snapshot.themes.empty:
         name_col = "name" if "name" in snapshot.themes.columns else "theme_name"

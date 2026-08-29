@@ -100,12 +100,8 @@ def score_cross_section(
     return out
 
 
-def emerging_metric_from_scores(score_by_date: pd.Series, lag: int = 5) -> pd.Series:
-    """Reward positive score path (e.g. 50 -> 65 -> 78), not just a high print.
-
-    emerging = (score_t - score_{t-lag}) + 0.5 * max(convexity, 0)
-    convexity uses the midpoint of the lag window when enough history exists.
-    """
+def emerging_metric_path_only(score_by_date: pd.Series, lag: int = 5) -> pd.Series:
+    """V1 path-only metric: total change + convexity bonus. Kept for comparison."""
     s = pd.to_numeric(score_by_date, errors="coerce")
     change = s - s.shift(lag)
     half = max(lag // 2, 1)
@@ -113,6 +109,32 @@ def emerging_metric_from_scores(score_by_date: pd.Series, lag: int = 5) -> pd.Se
     convexity = convexity.where(s.shift(lag).notna())
     bonus = convexity.clip(lower=0) * 0.5
     return (change + bonus.fillna(0)).where(change.notna())
+
+
+def emerging_metric_from_scores(
+    score_by_date: pd.Series,
+    lag: int = 5,
+    persist_lookback: int = 5,
+) -> pd.Series:
+    """Emerging Rotation with persistence (default V2).
+
+    Path-only (V1) over-weights a single-day spike with the same 5-session change
+    as a grind higher. V2 multiplies the path term by how often daily score
+    deltas were positive in ``persist_lookback`` and subtracts a last-day spike
+    residual vs the median absolute daily change.
+
+    emerging = (change_lag + 0.5 * max(convexity, 0)) * (0.35 + 0.65 * pos_share)
+               - 0.25 * max(last_delta - median(|delta|_lookback), 0)
+    """
+    s = pd.to_numeric(score_by_date, errors="coerce")
+    path = emerging_metric_path_only(s, lag=lag)
+    d1 = s.diff()
+    window = max(persist_lookback, lag)
+    pos_share = (d1 > 0).astype(float).rolling(window, min_periods=lag).mean()
+    persist_mult = 0.35 + 0.65 * pos_share.fillna(0)
+    abs_med = d1.abs().rolling(window, min_periods=lag).median()
+    spike = (d1 - abs_med).clip(lower=0)
+    return (path * persist_mult - 0.25 * spike.fillna(0)).where(path.notna())
 
 
 def attach_emerging_metric(

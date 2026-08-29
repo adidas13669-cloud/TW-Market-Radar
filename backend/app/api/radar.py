@@ -46,23 +46,34 @@ def _sector_row(metric: SectorDailyMetric, theme_name: str | None, rank: float |
         emerging_metric=_f(metric.emerging_metric),
         divergence_flag=metric.divergence_flag,
         rank=rank,
+        member_count=metric.member_count,
+        priced_member_count=metric.priced_member_count,
+        flow_member_count=metric.flow_member_count,
+        coverage_ratio=_f(metric.coverage_ratio),
+        low_coverage=bool(metric.low_coverage),
     )
 
 
 @router.get("/radar/sectors/latest", response_model=list[SectorRadarRow])
-def latest_sector_radar(session: Session = Depends(get_db)) -> list[SectorRadarRow]:
+def latest_sector_radar(
+    include_low_coverage: bool = Query(default=False),
+    session: Session = Depends(get_db),
+) -> list[SectorRadarRow]:
     latest = _latest_date(session)
     if latest is None:
         return []
-    return _sector_snapshot(session, latest, order_by="rotation_score")
+    return _sector_snapshot(session, latest, order_by="rotation_score", include_low_coverage=include_low_coverage)
 
 
 @router.get("/radar/emerging", response_model=list[SectorRadarRow])
-def emerging_sectors(session: Session = Depends(get_db)) -> list[SectorRadarRow]:
+def emerging_sectors(
+    include_low_coverage: bool = Query(default=False),
+    session: Session = Depends(get_db),
+) -> list[SectorRadarRow]:
     latest = _latest_date(session)
     if latest is None:
         return []
-    return _sector_snapshot(session, latest, order_by="emerging_metric")
+    return _sector_snapshot(session, latest, order_by="emerging_metric", include_low_coverage=include_low_coverage)
 
 
 @router.get("/radar/divergence", response_model=list[SectorRadarRow])
@@ -77,6 +88,7 @@ def divergence_candidates(session: Session = Depends(get_db)) -> list[SectorRada
             SectorDailyMetric.divergence_flag.is_(True),
         )
     ).scalars().all()
+    rows = [r for r in rows if not r.low_coverage]
     frame = pd.DataFrame(
         [{"theme_id": r.theme_id, "acceleration": _f(r.acceleration)} for r in rows]
     )
@@ -177,11 +189,18 @@ def _theme_names(session: Session) -> dict[str, str]:
     return {t.id: t.name for t in session.execute(select(Theme)).scalars().all()}
 
 
-def _sector_snapshot(session: Session, asof: date, order_by: str) -> list[SectorRadarRow]:
+def _sector_snapshot(
+    session: Session,
+    asof: date,
+    order_by: str,
+    include_low_coverage: bool = False,
+) -> list[SectorRadarRow]:
     names = _theme_names(session)
     rows = session.execute(
         select(SectorDailyMetric).where(SectorDailyMetric.trade_date == asof)
     ).scalars().all()
+    if not include_low_coverage:
+        rows = [r for r in rows if not r.low_coverage]
     frame = pd.DataFrame(
         [
             {

@@ -84,3 +84,18 @@ def test_emerging_metric_attached_per_theme():
     latest = out.sort_values("trade_date").groupby("theme_id").tail(1)
     order = latest.sort_values("emerging_metric", ascending=False)["theme_id"].tolist()
     assert order == ["RISING", "FLAT", "FALLING"]
+
+
+def test_emerging_v2_prefers_persistent_grind_over_one_day_spike():
+    from app.services.scoring_engine import emerging_metric_path_only
+
+    grind = pd.Series([40.0, 45.0, 50.0, 55.0, 60.0, 65.0])
+    spike = pd.Series([40.0, 40.0, 40.0, 40.0, 40.0, 65.0])
+    v1_grind = emerging_metric_path_only(grind, lag=5).iloc[-1]
+    v1_spike = emerging_metric_path_only(spike, lag=5).iloc[-1]
+    v2_grind = emerging_metric_from_scores(grind, lag=5).iloc[-1]
+    v2_spike = emerging_metric_from_scores(spike, lag=5).iloc[-1]
+    # V1 convexity bonus can rank a one-day jump above a grind with the same 5d change.
+    assert v1_spike > v1_grind
+    assert v2_grind > v2_spike
+    assert v2_grind > 0

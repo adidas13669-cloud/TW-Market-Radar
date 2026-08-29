@@ -190,19 +190,55 @@ Missing factors are **skipped** and remaining weights are re-normalized. If no
 factor is present, the score is missing. The weighted sum is multiplied by 100
 and clipped to `[0, 100]`.
 
-## Emerging Rotation (assumption)
+## Emerging Rotation
 
-High absolute score is not enough. For each theme’s score history:
+High absolute score is not enough. V1 (path-only, kept for comparison):
 
 ```
 change = score_t - score_{t-lag}          # default lag = 5 sessions
 convexity = (score_t - score_{t-h}) - (score_{t-h} - score_{t-lag})
             where h = lag // 2
-emerging_metric = change + 0.5 * max(convexity, 0)
+emerging_v1 = change + 0.5 * max(convexity, 0)
 ```
 
-Themes with a path such as 50 → 65 → 78 rank above a high but flat 80 → 80 → 80.
-Tie-break: current `rotation_score`.
+V1 correctly ranks a rising 50 → 65 → 78 path above a flat 80 → 80 → 80 path.
+It also rewards convexity, which made a **one-day spike** with the same 5-session
+change outrank a persistent grind (e.g. 40→40→40→40→40→65 vs 40→45→50→55→60→65).
+
+V2 (default) multiplies the path term by how often daily score deltas were
+positive over the lookback and subtracts a last-day spike residual versus the
+median absolute daily change:
+
+```
+pos_share = share of positive daily score deltas in last max(lag, persist_lookback) sessions
+spike     = max(last_delta - median(|daily delta|), 0)
+emerging  = emerging_v1 * (0.35 + 0.65 * pos_share) - 0.25 * spike
+```
+
+On the grind-vs-spike pair above, V1 ranks the spike higher; V2 ranks the grind
+higher. Tie-break for ranking is still current `rotation_score`.
+
+## Coverage (data-quality confidence)
+
+Each sector metric stores:
+
+- `member_count` — mapped tickers
+- `priced_member_count` — members with a close that session
+- `flow_member_count` — members with usable institutional flow that session
+- `coverage_ratio` — `min(priced/members, flow/members)`
+- `low_coverage` — `coverage_ratio < min_coverage_ratio` (default **0.80**, env `MIN_COVERAGE_RATIO`)
+
+Low-coverage rows are **kept** on the metric table but **excluded** from default
+Top Rotation / Emerging / Divergence rankings (`include_low_coverage=true` to include).
+
+## Theme mapping metadata
+
+Seed mapping is **not** a production taxonomy. Catalog fields:
+
+- `mapping_version`
+- `mapping_source`
+- `effective_from`
+- `production_ready` (false for `seed-v1`)
 
 ## Lifecycle (assumption)
 

@@ -15,6 +15,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--database-url", default=None)
     parser.add_argument("--payload-dir", default="data/raw_payloads")
     parser.add_argument("--mapping", default="data/theme_mapping/seed_themes.csv")
+    parser.add_argument("--force", action="store_true", help="Re-fetch even if this date is already SUCCESS")
     args = parser.parse_args(argv)
     trade_date = date.fromisoformat(args.date)
     engine = get_engine(args.database_url) if args.database_url else get_engine()
@@ -27,6 +28,8 @@ def main(argv: list[str] | None = None) -> int:
             trade_date,
             payload_dir=Path(args.payload_dir),
             mapping_path=Path(args.mapping),
+            skip_if_success=not args.force,
+            force=args.force,
         )
         session.commit()
     except Exception:
@@ -36,6 +39,7 @@ def main(argv: list[str] | None = None) -> int:
         session.close()
     payload = {
         "trade_date": result.trade_date.isoformat(),
+        "status": result.status.value,
         "skipped_holiday": result.skipped_holiday,
         "warmup_complete": result.warmup_complete,
         "sectors_scored": result.sectors_scored,

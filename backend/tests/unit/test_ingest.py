@@ -8,7 +8,8 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.pool import StaticPool
 
 from app.core.exceptions import ProviderError
-from app.models.entities import Base, DailyQuote
+from app.core.enums import IngestStatus
+from app.models.entities import Base, DailyQuote, IngestRun
 from app.services.ingest import ingest_trade_date
 from app.services.pipeline import run_calculation
 from app.services.validation import validate_session
@@ -109,6 +110,30 @@ def test_duplicate_ingest_is_idempotent(tmp_path):
     assert n_quotes == n_quotes2
     assert first.providers["TWSE"].quotes == second.providers["TWSE"].quotes
     assert (tmp_path / "2026-08-28" / "twse_quotes.json").exists()
+
+
+def test_successful_ingest_is_skipped_on_resume(tmp_path):
+    session = _session()
+    twse = PayloadProvider(_twse_payloads())
+    tpex = PayloadProvider(_tpex_payloads())
+    mapping = Path("data/theme_mapping/seed_themes.csv")
+    kwargs = dict(
+        twse=twse,
+        tpex=tpex,
+        payload_dir=tmp_path,
+        mapping_path=mapping,
+        recompute_metrics=False,
+        skip_if_success=True,
+    )
+    first = ingest_trade_date(session, date(2026, 8, 28), **kwargs)
+    session.commit()
+    assert first.status == IngestStatus.SUCCESS
+    second = ingest_trade_date(session, date(2026, 8, 28), **kwargs)
+    assert second.status == IngestStatus.SKIPPED
+    run = session.get(IngestRun, date(2026, 8, 28))
+    assert run is not None
+    assert run.status == IngestStatus.SUCCESS
+    assert session.execute(select(func.count()).select_from(DailyQuote)).scalar() > 0
 
 
 def test_partial_provider_failure_still_ingests_other_venue(tmp_path):

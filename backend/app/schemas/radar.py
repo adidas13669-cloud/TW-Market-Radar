@@ -33,6 +33,11 @@ class SectorRadarRow(BaseModel):
     emerging_metric: float | None = None
     divergence_flag: bool = False
     rank: float | None = None
+    member_count: int | None = None
+    priced_member_count: int | None = None
+    flow_member_count: int | None = None
+    coverage_ratio: float | None = None
+    low_coverage: bool = False
 
 
 class ConstituentRow(BaseModel):

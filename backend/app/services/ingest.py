@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import logging
 from dataclasses import dataclass, field
 from datetime import date, timedelta
 from decimal import Decimal
@@ -13,7 +14,7 @@ import pandas as pd
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
-from app.core.enums import Market
+from app.core.enums import IngestStatus, Market
 from app.core.exceptions import NoTradingSessionError, ProviderError
 from app.core.units import LOT_TO_SHARES, QuantityUnit
 from app.data_providers.registry import load_theme_mapping_csv
@@ -23,14 +24,18 @@ from app.models.entities import (
     DailyInstitutionalFlow,
     DailyMargin,
     DailyQuote,
+    IngestRun,
+    MappingCatalog,
     Security,
     SecurityTheme,
     Theme,
 )
 from app.services.normalize import to_canonical_flow, to_margin_notional
 from app.services.persistence import persist_calculation, snapshot_from_db
-from app.services.pipeline import CalculationResult, run_calculation
+from app.services.pipeline import run_calculation
 from app.services.validation import SessionValidation, validate_session
+
+logger = logging.getLogger(__name__)
 
 DEFAULT_MAPPING = Path("data/theme_mapping/seed_themes.csv")
 DEFAULT_PAYLOAD_DIR = Path("data/raw_payloads")
@@ -70,6 +75,7 @@ class IngestResult:
     sectors_scored: int = 0
     warmup_complete: bool = False
     skipped_holiday: bool = False
+    status: IngestStatus = IngestStatus.SUCCESS
 
 
 def save_payload(directory: Path, trade_date: date, name: str, payload: Any) -> Path:
@@ -80,14 +86,56 @@ def save_payload(directory: Path, trade_date: date, name: str, payload: Any) -> 
     return path
 
 
+def load_mapping_meta(mapping_path: Path = DEFAULT_MAPPING) -> dict[str, Any]:
+    meta_path = mapping_path.with_name("mapping_meta.json")
+    if meta_path.exists():
+        return json.loads(meta_path.read_text(encoding="utf-8"))
+    return {
+        "mapping_version": "seed-v1",
+        "mapping_source": str(mapping_path),
+        "effective_from": "2026-06-01",
+        "production_ready": False,
+        "notes": "Development seed mapping. Not a production sector taxonomy.",
+    }
+
+
 def seed_theme_mapping(session: Session, mapping_path: Path = DEFAULT_MAPPING) -> None:
     if not mapping_path.exists():
         return
+    meta = load_mapping_meta(mapping_path)
+    effective = date.fromisoformat(str(meta["effective_from"])) if meta.get("effective_from") else None
+    catalog = session.get(MappingCatalog, 1)
+    if catalog is None:
+        session.add(
+            MappingCatalog(
+                id=1,
+                mapping_version=str(meta.get("mapping_version") or "seed-v1"),
+                mapping_source=str(meta.get("mapping_source") or mapping_path),
+                effective_from=effective or date(2026, 6, 1),
+                production_ready=bool(meta.get("production_ready")),
+                notes=meta.get("notes"),
+            )
+        )
+    else:
+        catalog.mapping_version = str(meta.get("mapping_version") or catalog.mapping_version)
+        catalog.mapping_source = str(meta.get("mapping_source") or catalog.mapping_source)
+        if effective:
+            catalog.effective_from = effective
+        catalog.production_ready = bool(meta.get("production_ready"))
+        catalog.notes = meta.get("notes")
     seen_sec: set[str] = set()
     seen_theme: set[str] = set()
     for rec in load_theme_mapping_csv(mapping_path):
         if rec.theme_id not in seen_theme:
-            session.merge(Theme(id=rec.theme_id, name=rec.theme_name or rec.theme_id))
+            session.merge(
+                Theme(
+                    id=rec.theme_id,
+                    name=rec.theme_name or rec.theme_id,
+                    mapping_version=str(meta.get("mapping_version") or "seed-v1"),
+                    mapping_source=str(meta.get("mapping_source") or mapping_path),
+                    effective_from=effective,
+                )
+            )
             seen_theme.add(rec.theme_id)
         if rec.security_id not in seen_sec:
             _upsert_security(session, rec.security_id, rec.security_id, Market.TWSE, True)
@@ -106,12 +154,21 @@ def ingest_trade_date(
     mapping_path: Path = DEFAULT_MAPPING,
     continue_on_provider_error: bool = True,
     recompute_metrics: bool = True,
+    skip_if_success: bool = False,
+    force: bool = False,
 ) -> IngestResult:
     """Fetch both venues for one calendar date. Holidays skip persist of empty sessions."""
     twse = twse or TwseProvider()
     tpex = tpex or TpexProvider()
     seed_theme_mapping(session, mapping_path)
     result = IngestResult(trade_date=trade_date)
+
+    existing = session.get(IngestRun, trade_date)
+    if skip_if_success and not force and existing is not None and existing.status == IngestStatus.SUCCESS:
+        result.status = IngestStatus.SKIPPED
+        result.warmup_complete = True
+        logger.info("skip %s already SUCCESS", trade_date)
+        return result
 
     quote_rows: list[dict[str, Any]] = []
     flow_rows: list[dict[str, Any]] = []
@@ -151,8 +208,11 @@ def ingest_trade_date(
 
     if twse_res.holiday and tpex_res.holiday:
         result.skipped_holiday = True
+        result.status = IngestStatus.HOLIDAY
         result.validation = SessionValidation(trade_date=trade_date)
         result.validation.add("holiday", f"{trade_date} is not a trading session", "info")
+        _record_ingest_run(session, result)
+        logger.info("%s HOLIDAY", trade_date)
         return result
 
     quotes = pd.DataFrame(quote_rows)
@@ -169,6 +229,9 @@ def ingest_trade_date(
     )
     fatal = [i for i in result.validation.issues if i.severity == "error"]
     if fatal and quotes.empty:
+        result.status = _classify_status(result)
+        _record_ingest_run(session, result)
+        logger.warning("%s %s with empty quotes", trade_date, result.status)
         return result
 
     _persist_raw(session, trade_date, quotes, flows, margins)
@@ -198,6 +261,20 @@ def ingest_trade_date(
         result.warmup_complete = bool(
             not latest.empty and latest["avg_20d"].notna().any()
         )
+    result.status = _classify_status(result)
+    _record_ingest_run(session, result)
+    if result.status != IngestStatus.SUCCESS:
+        logger.warning("%s %s", trade_date, result.status)
+        for name, provider in result.providers.items():
+            if provider.error:
+                logger.warning("%s %s provider failure: %s", trade_date, name, provider.error)
+    else:
+        logger.info(
+            "%s SUCCESS twse_q=%s tpex_q=%s",
+            trade_date,
+            result.providers.get("TWSE").quotes if result.providers.get("TWSE") else 0,
+            result.providers.get("TPEX").quotes if result.providers.get("TPEX") else 0,
+        )
     return result
 
 
@@ -205,15 +282,56 @@ def backfill(
     session: Session,
     start: date,
     end: date,
+    *,
+    commit_each: bool = False,
+    skip_if_success: bool = True,
     **kwargs: Any,
 ) -> list[IngestResult]:
     results: list[IngestResult] = []
     current = start
+    kwargs.setdefault("skip_if_success", skip_if_success)
     while current <= end:
         if current.weekday() < 5:
-            results.append(ingest_trade_date(session, current, **kwargs))
+            result = ingest_trade_date(session, current, **kwargs)
+            results.append(result)
+            if commit_each:
+                session.commit()
         current += timedelta(days=1)
     return results
+
+
+def _classify_status(result: IngestResult) -> IngestStatus:
+    if result.skipped_holiday:
+        return IngestStatus.HOLIDAY
+    quotes = sum(p.quotes for p in result.providers.values())
+    errors = [p for p in result.providers.values() if p.error and not p.holiday]
+    if quotes == 0:
+        return IngestStatus.PROVIDER_ERROR if errors else IngestStatus.NO_DATA
+    return IngestStatus.SUCCESS
+
+
+def _record_ingest_run(session: Session, result: IngestResult) -> None:
+    twse = result.providers.get("TWSE") or ProviderDayResult("TWSE")
+    tpex = result.providers.get("TPEX") or ProviderDayResult("TPEX")
+    errors = []
+    for name, provider in result.providers.items():
+        if provider.error:
+            errors.append(f"{name}: {provider.error}")
+    session.merge(
+        IngestRun(
+            trade_date=result.trade_date,
+            status=result.status.value,
+            twse_quotes=twse.quotes,
+            tpex_quotes=tpex.quotes,
+            twse_flows=twse.flows,
+            tpex_flows=tpex.flows,
+            twse_margins=twse.margins,
+            tpex_margins=tpex.margins,
+            error_log="; ".join(errors) if errors else None,
+            notes="holiday" if result.skipped_holiday else None,
+        )
+    )
+    session.flush()
 
 
 def _ingest_provider(

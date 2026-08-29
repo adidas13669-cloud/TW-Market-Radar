@@ -99,6 +99,11 @@ def persist_calculation(session: Session, result: CalculationResult) -> None:
                 rotation_score=_dec(row.get("rotation_score")),
                 emerging_metric=_dec(row.get("emerging_metric")),
                 divergence_flag=bool(row.get("divergence_flag") is True or row.get("divergence_flag") == 1),
+                member_count=_int(row.get("member_count")),
+                priced_member_count=_int(row.get("priced_member_count")),
+                flow_member_count=_int(row.get("flow_member_count")),
+                coverage_ratio=_dec(row.get("coverage_ratio")),
+                low_coverage=bool(row.get("low_coverage") is True or row.get("low_coverage") == 1),
             )
         )
     for _, row in result.stock_metrics.iterrows():
@@ -143,6 +148,17 @@ def _dec(value: object) -> Decimal | None:
     except TypeError:
         pass
     return Decimal(str(float(value)))
+
+
+def _int(value: object) -> int | None:
+    if value is None:
+        return None
+    try:
+        if pd.isna(value):
+            return None
+    except TypeError:
+        pass
+    return int(value)
 
 
 def _date(value: object) -> date:

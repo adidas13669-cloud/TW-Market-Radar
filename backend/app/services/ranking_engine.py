@@ -28,13 +28,19 @@ def latest_asof(frame: pd.DataFrame, asof=None) -> pd.DataFrame:
     return frame.loc[dates == target].copy()
 
 
-def rank_sectors(frame: pd.DataFrame, asof=None) -> pd.DataFrame:
-    snap = latest_asof(frame, asof)
+def _eligible(snap: pd.DataFrame, include_low_coverage: bool) -> pd.DataFrame:
+    if include_low_coverage or snap.empty or "low_coverage" not in snap.columns:
+        return snap
+    return snap[snap["low_coverage"] != True].copy()  # noqa: E712
+
+
+def rank_sectors(frame: pd.DataFrame, asof=None, include_low_coverage: bool = False) -> pd.DataFrame:
+    snap = _eligible(latest_asof(frame, asof), include_low_coverage)
     return rank_descending(snap, "rotation_score")
 
 
-def rank_emerging(frame: pd.DataFrame, asof=None) -> pd.DataFrame:
-    snap = latest_asof(frame, asof)
+def rank_emerging(frame: pd.DataFrame, asof=None, include_low_coverage: bool = False) -> pd.DataFrame:
+    snap = _eligible(latest_asof(frame, asof), include_low_coverage)
     out = rank_descending(snap, "emerging_metric")
     if "rotation_score" in out.columns:
         out = out.sort_values(
@@ -45,8 +51,8 @@ def rank_emerging(frame: pd.DataFrame, asof=None) -> pd.DataFrame:
     return out
 
 
-def rank_divergence(frame: pd.DataFrame, asof=None) -> pd.DataFrame:
-    snap = latest_asof(frame, asof)
+def rank_divergence(frame: pd.DataFrame, asof=None, include_low_coverage: bool = False) -> pd.DataFrame:
+    snap = _eligible(latest_asof(frame, asof), include_low_coverage)
     flagged = snap[snap["divergence_flag"] == True]  # noqa: E712
     return rank_descending(flagged, "acceleration")
 

@@ -1,6 +1,6 @@
 from collections.abc import Generator
 
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, inspect, text
 from sqlalchemy.engine import Engine
 from sqlalchemy.orm import Session, sessionmaker
 
@@ -30,6 +30,38 @@ def get_session_factory(engine: Engine | None = None) -> sessionmaker[Session]:
 def init_db(engine: Engine | None = None) -> None:
     eng = engine or get_engine()
     Base.metadata.create_all(bind=eng)
+    migrate_sqlite_columns(eng)
+
+
+def migrate_sqlite_columns(engine: Engine) -> None:
+    """Add columns introduced after the first SQLite file was created."""
+    if engine.dialect.name != "sqlite":
+        return
+    additions = {
+        "themes": [
+            ("mapping_version", "VARCHAR(32)"),
+            ("mapping_source", "VARCHAR(255)"),
+            ("effective_from", "DATE"),
+        ],
+        "sector_daily_metrics": [
+            ("member_count", "INTEGER"),
+            ("priced_member_count", "INTEGER"),
+            ("flow_member_count", "INTEGER"),
+            ("coverage_ratio", "NUMERIC(18, 8)"),
+            ("low_coverage", "BOOLEAN DEFAULT 0 NOT NULL"),
+        ],
+    }
+    inspector = inspect(engine)
+    tables = set(inspector.get_table_names())
+    with engine.begin() as conn:
+        for table, columns in additions.items():
+            if table not in tables:
+                continue
+            existing = {c["name"] for c in inspector.get_columns(table)}
+            for name, ddl in columns:
+                if name in existing:
+                    continue
+                conn.execute(text(f"ALTER TABLE {table} ADD COLUMN {name} {ddl}"))
 
 
 def get_db() -> Generator[Session, None, None]:

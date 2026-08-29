@@ -41,11 +41,22 @@ Ingest one trading date (live HTTP; writes `data/raw_payloads/` and SQLite):
 PYTHONPATH=backend python -m app.cli.ingest --date 2026-08-28
 ```
 
-Backfill a range of weekdays:
+Backfill a range of weekdays (idempotent, skips dates already marked SUCCESS):
 
 ```bash
-PYTHONPATH=backend python -m app.cli.backfill --start 2026-07-28 --end 2026-08-28
+PYTHONPATH=backend python -m app.cli.backfill --start 2026-06-01 --end 2026-08-28
 ```
+
+Audit a stored snapshot (offline; no live HTTP):
+
+```bash
+PYTHONPATH=backend python -m app.cli.audit --date 2026-08-28
+```
+
+Theme membership seed: `data/theme_mapping/seed_themes.csv` plus
+`data/theme_mapping/mapping_meta.json`. The five seed themes are development
+fixtures, not production sector coverage. GitHub Actions runs `pytest` only
+(no live TWSE/TPEx).
 
 Pipeline per date: fetch → validate → normalize to TWD notional → persist raw →
 calculate metrics → score universe → persist radar snapshot. Holidays are skipped
@@ -67,8 +78,6 @@ Radar endpoints (after data is ingested and `recompute` has run):
 - `GET /api/v1/radar/sectors/{theme_id}`
 - `GET /api/v1/radar/sectors/{theme_id}/history`
 - `GET /api/v1/radar/divergence`
-
-Theme membership seed: `data/theme_mapping/seed_themes.csv`.
 
 ## Layout
 
