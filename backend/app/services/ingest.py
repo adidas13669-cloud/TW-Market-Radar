@@ -10,6 +10,7 @@ from pathlib import Path
 from typing import Any
 
 import pandas as pd
+from sqlalchemy import select
 from sqlalchemy.orm import Session
 
 from app.core.enums import Market
@@ -172,6 +173,19 @@ def ingest_trade_date(
 
     _persist_raw(session, trade_date, quotes, flows, margins)
     session.flush()
+
+    stored_dates = set(
+        session.execute(select(DailyQuote.trade_date).distinct()).scalars().all()
+    )
+    if result.validation:
+        result.validation.quote_sessions = len(stored_dates)
+        result.validation.warmup_complete = len(stored_dates) >= 20
+        result.validation.issues = [i for i in result.validation.issues if i.code != "warmup"]
+        if not result.validation.warmup_complete:
+            result.validation.add(
+                "warmup",
+                f"{len(stored_dates)} quote sessions stored; avg_20d/acceleration need 20",
+            )
 
     if recompute_metrics:
         snap = snapshot_from_db(session)
@@ -402,7 +416,7 @@ def _persist_raw(session: Session, trade_date: date, quotes: pd.DataFrame, flows
 
 
 def _prior_quote_universe(session: Session, trade_date: date) -> tuple[set[date], set[str]]:
-    rows = session.query(DailyQuote.trade_date, DailyQuote.security_id).all()
+    rows = session.execute(select(DailyQuote.trade_date, DailyQuote.security_id)).all()
     dates = {d for d, _ in rows if d < trade_date}
     ids = {sid for d, sid in rows if d < trade_date}
     return dates, ids

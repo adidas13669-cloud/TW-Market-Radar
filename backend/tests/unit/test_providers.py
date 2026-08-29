@@ -16,6 +16,7 @@ def test_date_helpers():
 
 
 def test_parse_number_does_not_fabricate_missing():
+    assert parse_number("----") is None
     assert parse_number("--") is None
     assert parse_number("") is None
     assert parse_number("1,234") == 1234.0

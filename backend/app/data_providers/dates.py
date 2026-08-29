@@ -14,7 +14,9 @@ def parse_number(value: object) -> float | None:
     if value is None:
         return None
     text = str(value).strip().replace(",", "").replace("+", "")
-    if text == "" or text in {"--", "---", "null", "None", "N/A"}:
+    if text == "" or text.lower() in {"null", "none", "n/a"}:
+        return None
+    if set(text) <= {"-"}:
         return None
     try:
         return float(text)
