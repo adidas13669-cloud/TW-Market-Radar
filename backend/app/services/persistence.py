@@ -35,7 +35,8 @@ def current_mapping_version(session: Session, asof: date | None = None) -> str |
     ]
     if not effective:
         effective = list(rows)
-    effective.sort(key=lambda r: r.effective_from, reverse=True)
+    # Prefer non-seed versions when effective windows overlap.
+    effective.sort(key=lambda r: (r.effective_from, r.mapping_version != "seed-v1", r.mapping_version), reverse=True)
     return effective[0].mapping_version
 
 
@@ -124,8 +125,9 @@ def snapshot_from_db(session: Session, asof: date | None = None, mapping_version
 
 def persist_calculation(session: Session, result: CalculationResult, mapping_version: str | None = None) -> None:
     version = mapping_version or CURRENT_MAPPING_VERSION
-    session.execute(delete(SectorDailyMetric).where(SectorDailyMetric.mapping_version == version))
-    session.execute(delete(SectorDailyMetric).where(SectorDailyMetric.mapping_version.is_(None)))
+    # SQLite unique key is (theme_id, trade_date); one snapshot per date.
+    # mapping_version is stored as provenance of the written snapshot.
+    session.execute(delete(SectorDailyMetric))
     session.execute(delete(StockDailyMetric))
     for _, row in result.sector_metrics.iterrows():
         session.add(
