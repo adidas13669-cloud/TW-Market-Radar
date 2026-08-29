@@ -35,6 +35,12 @@ def snapshot_from_db(session: Session) -> MarketSnapshot:
                 "foreign_net_amount": _f(r.foreign_net_amount),
                 "investment_trust_net_amount": _f(r.investment_trust_net_amount),
                 "dealer_net_amount": _f(r.dealer_net_amount),
+                "foreign_net_shares": _f(r.foreign_net_shares),
+                "investment_trust_net_shares": _f(r.investment_trust_net_shares),
+                "dealer_net_shares": _f(r.dealer_net_shares),
+                "source_unit": r.source_unit or "twd_notional",
+                "flow_unit": r.flow_unit,
+                "amount_estimated": r.amount_estimated,
             }
             for r in session.execute(select(DailyInstitutionalFlow)).scalars().all()
         ]
@@ -58,6 +64,9 @@ def snapshot_from_db(session: Session) -> MarketSnapshot:
                 "trade_date": r.trade_date,
                 "margin_buy_change": _f(r.margin_buy_change),
                 "margin_buy_balance": _f(r.margin_buy_balance),
+                "margin_buy_change_lots": _f(r.margin_buy_change_lots),
+                "margin_notional_change": _f(r.margin_notional_change),
+                "source_unit": r.source_unit or "lots",
             }
             for r in session.execute(select(DailyMargin)).scalars().all()
         ]

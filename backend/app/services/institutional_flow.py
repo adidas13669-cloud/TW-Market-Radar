@@ -4,6 +4,9 @@ from __future__ import annotations
 
 import pandas as pd
 
+from app.core.exceptions import UnitMismatchError
+from app.core.units import CANONICAL_FLOW_UNIT
+
 
 FLOW_COMPONENTS = (
     "foreign_net_amount",
@@ -41,7 +44,24 @@ def add_institutional_flow_column(frame: pd.DataFrame) -> pd.DataFrame:
     all_missing = component.isna().all(axis=1)
     out["institutional_flow"] = component.fillna(0.0).sum(axis=1)
     out.loc[all_missing, "institutional_flow"] = pd.NA
+    if "flow_unit" not in out.columns:
+        out["flow_unit"] = CANONICAL_FLOW_UNIT.value
     return out
+
+
+def require_canonical_flow_unit(frame: pd.DataFrame) -> None:
+    if frame.empty:
+        return
+    if "flow_unit" not in frame.columns:
+        raise UnitMismatchError("sector aggregation requires flow_unit=twd_notional")
+    units = {str(u) for u in frame["flow_unit"].dropna().unique()}
+    if not units:
+        return
+    if units != {CANONICAL_FLOW_UNIT.value}:
+        raise UnitMismatchError(
+            f"sector aggregation refuses non-canonical flow units {sorted(units)}; "
+            f"canonical is {CANONICAL_FLOW_UNIT.value}"
+        )
 
 
 def aggregate_sector_daily_flow(
@@ -63,6 +83,7 @@ def aggregate_sector_daily_flow(
         raise ValueError(f"stock_daily missing columns: {sorted(needed - set(stock_daily.columns))}")
     if not {"security_id", "theme_id"}.issubset(mapping.columns):
         raise ValueError("mapping requires security_id and theme_id")
+    require_canonical_flow_unit(stock_daily)
 
     joined = mapping.merge(stock_daily, on="security_id", how="inner")
     grouped = (
@@ -72,4 +93,5 @@ def aggregate_sector_daily_flow(
             member_count=("security_id", "nunique"),
         )
     )
+    grouped["flow_unit"] = CANONICAL_FLOW_UNIT.value
     return grouped

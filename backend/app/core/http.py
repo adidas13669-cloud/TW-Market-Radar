@@ -8,6 +8,11 @@ import httpx
 
 from app.core.exceptions import ProviderError
 
+DEFAULT_HEADERS = {
+    "User-Agent": "TW-Market-Radar/0.1 (+https://github.com/adidas13669-cloud/TW-Market-Radar)",
+    "Accept": "application/json,text/javascript,*/*;q=0.1",
+}
+
 
 class HttpClient:
     """Thin HTTP helper with timeout and bounded retries. No silent fallbacks."""
@@ -18,11 +23,13 @@ class HttpClient:
         max_retries: int = 3,
         backoff_seconds: float = 0.5,
         transport: httpx.BaseTransport | None = None,
+        headers: dict[str, str] | None = None,
     ) -> None:
         self._timeout = timeout_seconds
         self._max_retries = max(1, max_retries)
         self._backoff = backoff_seconds
-        self._client = httpx.Client(timeout=timeout_seconds, transport=transport)
+        merged = {**DEFAULT_HEADERS, **(headers or {})}
+        self._client = httpx.Client(timeout=timeout_seconds, transport=transport, headers=merged)
 
     def close(self) -> None:
         self._client.close()

@@ -7,7 +7,8 @@ from dataclasses import dataclass
 import pandas as pd
 
 from app.core.config import ScoreWeights
-from app.services.institutional_flow import add_institutional_flow_column, aggregate_sector_daily_flow
+from app.services.institutional_flow import aggregate_sector_daily_flow
+from app.services.normalize import to_canonical_flow, to_margin_notional
 from app.services.ranking_engine import rank_divergence, rank_emerging, rank_sectors
 from app.services.rotation_engine import (
     aggregate_sector_activity,
@@ -41,18 +42,21 @@ def run_calculation(
     emerging_lag: int = 5,
 ) -> CalculationResult:
     weights = weights or ScoreWeights()
-    stock_daily = add_institutional_flow_column(snapshot.flows)
-    if snapshot.quotes is not None and not snapshot.quotes.empty:
-        quote_cols = [c for c in ("open", "high", "low", "close", "volume", "trading_value") if c in snapshot.quotes.columns]
+    quotes = snapshot.quotes if snapshot.quotes is not None else pd.DataFrame()
+    stock_daily = to_canonical_flow(snapshot.flows, quotes)
+    if quotes is not None and not quotes.empty:
+        quote_cols = [c for c in ("open", "high", "low", "close", "volume", "trading_value", "is_suspended") if c in quotes.columns]
         stock_daily = stock_daily.merge(
-            snapshot.quotes[["trade_date", "security_id", *quote_cols]],
+            quotes[["trade_date", "security_id", *quote_cols]],
             on=["trade_date", "security_id"],
             how="left",
         )
-    if snapshot.margins is not None and not snapshot.margins.empty:
-        mcols = [c for c in ("margin_buy_change", "margin_buy_balance") if c in snapshot.margins.columns]
+    margins = snapshot.margins
+    if margins is not None and not margins.empty:
+        margins = to_margin_notional(margins, quotes)
+        mcols = [c for c in ("margin_notional_change", "margin_buy_change", "margin_buy_balance") if c in margins.columns]
         stock_daily = stock_daily.merge(
-            snapshot.margins[["trade_date", "security_id", *mcols]],
+            margins[["trade_date", "security_id", *mcols]],
             on=["trade_date", "security_id"],
             how="left",
         )
@@ -74,8 +78,8 @@ def run_calculation(
     if not momentum.empty:
         sector_daily = sector_daily.merge(momentum, on=["trade_date", "theme_id"], how="left")
 
-    if snapshot.margins is not None and not snapshot.margins.empty:
-        sector_m = aggregate_sector_margin(snapshot.margins, snapshot.mapping)
+    if margins is not None and not margins.empty:
+        sector_m = aggregate_sector_margin(margins, snapshot.mapping)
         sector_daily = sector_daily.merge(sector_m, on=["trade_date", "theme_id"], how="left")
 
     sector_metrics = compute_entity_timeseries_metrics(sector_daily, "theme_id")

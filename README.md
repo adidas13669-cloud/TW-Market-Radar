@@ -35,6 +35,23 @@ Run unit tests (no live internet):
 pytest
 ```
 
+Ingest one trading date (live HTTP; writes `data/raw_payloads/` and SQLite):
+
+```bash
+PYTHONPATH=backend python -m app.cli.ingest --date 2026-08-28
+```
+
+Backfill a range of weekdays:
+
+```bash
+PYTHONPATH=backend python -m app.cli.backfill --start 2026-07-28 --end 2026-08-28
+```
+
+Pipeline per date: fetch → validate → normalize to TWD notional → persist raw →
+calculate metrics → score universe → persist radar snapshot. Holidays are skipped
+without fabricating zeros. Incomplete 20-session history leaves `avg_20d` /
+`acceleration` missing until warm-up.
+
 Run the API:
 
 ```bash
@@ -56,8 +73,9 @@ Theme membership seed: `data/theme_mapping/seed_themes.csv`.
 ## Layout
 
 ```
-backend/app/          FastAPI app, models, providers, engines
-backend/tests/        pytest (fixtures, no live HTTP)
+backend/app/          FastAPI app, models, providers, engines, CLI ingest
+backend/tests/        pytest (fixtures, including trimmed live JSON)
 data/theme_mapping/  many-to-many security–theme CSV
-docs/formula_spec.md scoring and metric definitions
+data/raw_payloads/   captured exchange JSON (gitignored)
+docs/formula_spec.md scoring, units, and verified field maps
 ```

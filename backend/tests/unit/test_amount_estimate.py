@@ -40,6 +40,9 @@ def test_estimate_amounts_from_shares_flags_and_skips_when_close_missing():
     a = out.loc[out["security_id"] == "2330"].iloc[0]
     assert a["foreign_net_amount"] == 1000.0
     assert bool(a["amount_estimated"]) is True
+    assert a["estimation_method"] == "net_shares_times_close"
+    assert a["raw_net_shares"] == 11.0
+    assert a["estimated_net_amount"] == 1100.0
     b = out.loc[out["security_id"] == "2317"].iloc[0]
     assert pd.isna(b["foreign_net_amount"])
     assert bool(b["amount_estimated"]) is False

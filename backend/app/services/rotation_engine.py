@@ -222,13 +222,16 @@ def aggregate_sector_margin(
     if margins.empty or mapping.empty:
         return pd.DataFrame(columns=["trade_date", "theme_id", "margin_buy_change"])
     cols = ["trade_date", "security_id"]
-    extra = [c for c in ("margin_buy_change",) if c in margins.columns]
+    extra = [c for c in ("margin_notional_change", "margin_buy_change") if c in margins.columns]
     joined = mapping.merge(margins[cols + extra], on="security_id", how="inner")
-    if "margin_buy_change" not in joined.columns:
-        joined["margin_buy_change"] = pd.NA
-    return joined.groupby(["trade_date", "theme_id"], as_index=False).agg(
-        margin_buy_change=("margin_buy_change", "sum"),
+    value_col = "margin_notional_change" if "margin_notional_change" in joined.columns else "margin_buy_change"
+    if value_col not in joined.columns:
+        joined[value_col] = pd.NA
+    aggregated = joined.groupby(["trade_date", "theme_id"], as_index=False).agg(
+        margin_notional_change=(value_col, "sum"),
     )
+    aggregated["margin_buy_change"] = aggregated["margin_notional_change"]
+    return aggregated
 
 
 def compute_entity_timeseries_metrics(daily: pd.DataFrame, entity_col: str) -> pd.DataFrame:
@@ -271,7 +274,9 @@ def compute_entity_timeseries_metrics(daily: pd.DataFrame, entity_col: str) -> p
 
         g["continuity"] = buying_continuity(g["institutional_flow"]).values
 
-        if "margin_buy_change" in g.columns and "trading_value" in g.columns:
+        if "margin_notional_change" in g.columns and "trading_value" in g.columns:
+            g["margin_signal"] = margin_signal_series(g["margin_notional_change"], g["trading_value"]).values
+        elif "margin_buy_change" in g.columns and "trading_value" in g.columns:
             g["margin_signal"] = margin_signal_series(g["margin_buy_change"], g["trading_value"]).values
         else:
             g["margin_signal"] = pd.NA

@@ -7,7 +7,7 @@ explicit engineering assumptions.
 
 ## Institutional flow
 
-For each listed security and trading session:
+For each listed security and trading session, **after** conversion to TWD notional:
 
 ```
 institutional_flow = foreign_net_amount
@@ -15,12 +15,9 @@ institutional_flow = foreign_net_amount
                    + dealer_net_amount
 ```
 
-- If every leg is missing, `institutional_flow` is missing (not zero).
-- If at least one leg is present, absent legs contribute `0` for that session.
-- TWSE T86 / TPEx 三大法人 tables often publish **shares**, not notional.
-  Adapters store shares as published. Amounts are left missing unless the
-  source provides notional. Optional estimation (`shares * close`) is flagged
-  `amount_estimated=true` and is never applied silently inside scoring.
+- If every **share** leg is missing, `institutional_flow` is missing (not zero).
+- Published TWSE T86 / TPEx 三大法人 prints are **股數**, never copied into amount columns.
+- Canonical TWD = `net_shares * close` with `amount_estimated=true` and `estimation_method=net_shares_times_close`.
 
 ## Sector aggregation
 
@@ -83,18 +80,83 @@ continuity = 0.6 * (positive_flow_days / 10)
 
 Requires 10 sessions. Streak resets on a non-positive or missing flow day.
 
-## Margin signal (assumption)
+## Margin signal (verified units, 2026-08-28)
 
-TWSE/TPEx margin tables are used as a **retail-participation** proxy:
+TWSE `MI_MARGN` and TPEx `margin_bal` publish **融資餘額 / 增減 in 張 (lots)**,
+not TWD. 1 張 = 1,000 shares. Dividing lots by TWD trading value is invalid.
+
+V1 conversion:
 
 ```
-margin_signal = sum(margin_buy_change, 5) / trading_value_avg_20d
+margin_share_change     = margin_buy_change_lots * 1000
+margin_notional_change  = margin_share_change * close     # missing close → missing
+margin_signal           = sum(margin_notional_change, 5) / trading_value_avg_20d
 ```
 
-Missing/zero denominator → missing. Lifecycle crowding uses this together with
-score and slowing inflow; the Rotation Score treats a higher value as a mild
-positive factor (5% default weight). This is a documented choice, not a claim
-that retail financing is “smart money”.
+`margin_signal` is dimensionless (TWD / TWD). Raw lot columns stay on the
+margin table and are never scored directly.
+
+## Canonical scoring unit
+
+The radar **only** scores **TWD notional**.
+
+| Stream | Published unit (verified 2026-08-28) | Scoring unit |
+| --- | --- | --- |
+| Institutional 買賣超 | **股 (shares)** on both TWSE T86 and TPEx 3itrade | `net_shares * close` → TWD, `amount_estimated=true` |
+| Price | TWD per share | unchanged |
+| Volume `成交股數` | **shares** (not 張). TPEx `flagField=張數` applies to bid/ask size only | shares (ratio) |
+| Trading value `成交金額` | **TWD (元)** | TWD |
+| Margin 融資 | **張 (lots)** | lots → shares → TWD as above |
+
+Mixing `shares`, `lots`, and `twd_notional` in sector aggregation raises
+`UnitMismatchError`. Partial institutional legs stay missing (`None`); they are
+never filled with 0 at parse time.
+
+Estimation metadata persisted per row:
+
+- `raw_net_shares`
+- `estimated_net_amount`
+- `amount_estimated`
+- `estimation_method = net_shares_times_close`
+
+## Sign convention (verified)
+
+TWSE and TPEx both use **買賣超 = 買進 − 賣出**. Positive is net institutional
+buy. Dealer on both venues is the **合計** print (proprietary + hedge), matching
+TWSE field `自營商買賣超股數`.
+
+## Verified live endpoints (2026-08-28)
+
+| Venue | Dataset | URL | Key fields |
+| --- | --- | --- | --- |
+| TWSE | Quotes | `/rwd/zh/afterTrading/MI_INDEX?response=json&date=YYYYMMDD&type=ALLBUT0999` | table with `證券代號`,`成交股數`,`成交金額`,`收盤價` |
+| TWSE | Flow | `/rwd/zh/fund/T86?response=json&date=YYYYMMDD&selectType=ALLBUT0999` | `外陸資買賣超股數(不含外資自營商)`, `投信買賣超股數`, `自營商買賣超股數` (all 股數) |
+| TWSE | Margin | `/rwd/zh/marginTrading/MI_MARGN?response=json&date=YYYYMMDD&selectType=STOCK` | duplicated `前日餘額`/`今日餘額` blocks: 融資 then 融券, values in 張 |
+| TPEx | Quotes | `/web/stock/aftertrading/otc_quotes_no1430/stk_wn1430_result.php` `d=YYY/MM/DD` ROC | `成交股數`, `成交金額(元)`, `收盤` |
+| TPEx | Flow | `/web/stock/3insti/daily_trade/3itrade_hedge_result.php` | 7 repeating 買/賣/超 groups; foreign net idx 4, trust 13, dealer total 22 |
+| TPEx | Margin | `/web/stock/margin_trading/margin_balance/margin_bal_result.php` | `前資餘額(張)`, `資餘額`, `資買`/`資賣`/`現償` |
+
+Holiday: TWSE `stat` is `很抱歉，沒有符合條件的資料!`. TPEx `stat=ok` with `totalCount=0`.
+
+Remaining uncertainties:
+
+- TPEx 3itrade group headers are positional (duplicate `買進股數` labels). Order is
+  assumed to match TWSE T86 (foreign ex-dealer → … → dealer total). Not independently
+  labeled in JSON.
+- Warrant/ETF rows are ingested when present; theme radar uses `seed_themes.csv`.
+- `shares * close` is VWAP-agnostic and slightly disagrees with true notional.
+
+## Data provider contract
+
+- No HTTP inside scoring/calculation modules.
+- Transport failures raise `ProviderError` after bounded retries.
+- Unexpected payloads raise `ProviderParseError`.
+- Empty/`--` numeric cells become `None`, never silent zeros.
+- Dated ingest captures raw JSON under `data/raw_payloads/YYYY-MM-DD/` for replay.
+
+TWSE and TPEx public endpoints change without notice. Field maps live only in
+`app/data_providers/twse.py` and `tpex.py`.
+
 
 ## Four-quadrant state
 
@@ -163,13 +225,3 @@ acceleration > 0 and flow_5d > 0 and abs(price_momentum) <= 0.02
 ```
 
 Missing any input → not flagged (no invented confirmation).
-
-## Data provider contract
-
-- No HTTP inside scoring/calculation modules.
-- Transport failures raise `ProviderError` after bounded retries.
-- Unexpected payloads raise `ProviderParseError`.
-- Empty/`--` numeric cells become `None`, never silent zeros.
-
-TWSE and TPEx public endpoints change without notice. Field maps live only in
-`app/data_providers/twse.py` and `tpex.py`.

@@ -68,6 +68,8 @@ def synthetic_snapshot(n_days: int = 25) -> MarketSnapshot:
                     "foreign_net_amount": flow * 0.6,
                     "investment_trust_net_amount": flow * 0.3,
                     "dealer_net_amount": flow * 0.1,
+                    "source_unit": "twd_notional",
+                    "flow_unit": "twd_notional",
                 }
             )
             quote_rows.append(
@@ -83,8 +85,10 @@ def synthetic_snapshot(n_days: int = 25) -> MarketSnapshot:
                 {
                     "trade_date": d,
                     "security_id": sid,
+                    "source_unit": "twd_notional",
                     "margin_buy_change": 5_000 * (1 if flow > 0 else -1),
                     "margin_buy_balance": 1_000_000 + i * 1_000,
+                    "margin_notional_change": 5_000 * (1 if flow > 0 else -1),
                 }
             )
 
@@ -121,6 +125,9 @@ def seed_snapshot(session, snapshot: MarketSnapshot) -> None:
                 foreign_net_amount=row["foreign_net_amount"],
                 investment_trust_net_amount=row["investment_trust_net_amount"],
                 dealer_net_amount=row["dealer_net_amount"],
+                source_unit="twd_notional",
+                flow_unit="twd_notional",
+                amount_estimated=False,
             )
         )
     for _, row in snapshot.quotes.iterrows():
@@ -141,6 +148,8 @@ def seed_snapshot(session, snapshot: MarketSnapshot) -> None:
                     trade_date=pd.Timestamp(row["trade_date"]).date(),
                     margin_buy_change=row.get("margin_buy_change"),
                     margin_buy_balance=row.get("margin_buy_balance"),
+                    source_unit="twd_notional",
+                    margin_notional_change=row.get("margin_buy_change"),
                 )
             )
     session.flush()

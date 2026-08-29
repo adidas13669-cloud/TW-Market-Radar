@@ -41,13 +41,16 @@ def test_parse_twse_quotes_isolated_schema():
 
 def test_parse_twse_flow_missing_legs_stay_none():
     payload = {
+        "stat": "OK",
         "fields": ["證券代號", "外資買賣超股數", "投信買賣超股數", "自營商買賣超股數"],
         "data": [["2330", "1,000", "--", ""]],
     }
     rows = parse_twse_flow(payload, date(2024, 1, 2))
-    assert rows[0].foreign_net_amount == 1000
-    assert rows[0].investment_trust_net_amount is None
-    assert rows[0].dealer_net_amount is None
+    assert rows[0].foreign_net_shares == 1000
+    assert rows[0].investment_trust_net_shares is None
+    assert rows[0].dealer_net_shares is None
+    assert rows[0].foreign_net_amount is None
+    assert rows[0].source_unit.value == "shares"
 
 
 def test_parse_rejects_non_object():

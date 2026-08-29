@@ -5,6 +5,7 @@ from sqlalchemy import (
     Boolean,
     Date,
     ForeignKey,
+    Integer,
     Numeric,
     String,
     UniqueConstraint,
@@ -76,6 +77,9 @@ class DailyQuote(Base):
     close: Mapped[Decimal | None] = mapped_column(Money, nullable=True)
     volume: Mapped[Decimal | None] = mapped_column(Money, nullable=True)
     trading_value: Mapped[Decimal | None] = mapped_column(Money, nullable=True)
+    volume_unit: Mapped[str] = mapped_column(String(16), default="shares", nullable=False)
+    trading_value_unit: Mapped[str] = mapped_column(String(16), default="twd_notional", nullable=False)
+    is_suspended: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
 
     security: Mapped[Security] = relationship(back_populates="quotes")
 
@@ -96,6 +100,11 @@ class DailyInstitutionalFlow(Base):
     investment_trust_net_shares: Mapped[Decimal | None] = mapped_column(Money, nullable=True)
     dealer_net_shares: Mapped[Decimal | None] = mapped_column(Money, nullable=True)
     amount_estimated: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
+    estimation_method: Mapped[str | None] = mapped_column(String(64), nullable=True)
+    source_unit: Mapped[str] = mapped_column(String(16), default="shares", nullable=False)
+    flow_unit: Mapped[str | None] = mapped_column(String(16), nullable=True)
+    raw_net_shares: Mapped[Decimal | None] = mapped_column(Money, nullable=True)
+    estimated_net_amount: Mapped[Decimal | None] = mapped_column(Money, nullable=True)
 
     security: Mapped[Security] = relationship(back_populates="flows")
 
@@ -112,6 +121,12 @@ class DailyMargin(Base):
     short_sell_balance: Mapped[Decimal | None] = mapped_column(Money, nullable=True)
     margin_buy_change: Mapped[Decimal | None] = mapped_column(Money, nullable=True)
     short_sell_change: Mapped[Decimal | None] = mapped_column(Money, nullable=True)
+    source_unit: Mapped[str] = mapped_column(String(16), default="lots", nullable=False)
+    lot_size: Mapped[int] = mapped_column(Integer, default=1000, nullable=False)
+    margin_buy_balance_lots: Mapped[Decimal | None] = mapped_column(Money, nullable=True)
+    margin_buy_change_lots: Mapped[Decimal | None] = mapped_column(Money, nullable=True)
+    margin_share_change: Mapped[Decimal | None] = mapped_column(Money, nullable=True)
+    margin_notional_change: Mapped[Decimal | None] = mapped_column(Money, nullable=True)
 
     security: Mapped[Security] = relationship(back_populates="margins")
 
