@@ -125,9 +125,7 @@ def snapshot_from_db(session: Session, asof: date | None = None, mapping_version
 
 def persist_calculation(session: Session, result: CalculationResult, mapping_version: str | None = None) -> None:
     version = mapping_version or CURRENT_MAPPING_VERSION
-    # SQLite unique key is (theme_id, trade_date); one snapshot per date.
-    # mapping_version is stored as provenance of the written snapshot.
-    session.execute(delete(SectorDailyMetric))
+    session.execute(delete(SectorDailyMetric).where(SectorDailyMetric.mapping_version == version))
     session.execute(delete(StockDailyMetric))
     for _, row in result.sector_metrics.iterrows():
         session.add(

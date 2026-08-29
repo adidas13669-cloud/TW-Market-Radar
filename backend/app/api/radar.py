@@ -16,6 +16,7 @@ from app.schemas.radar import (
     SectorHistoryResponse,
     SectorRadarRow,
 )
+from app.services.persistence import current_mapping_version
 from app.services.ranking_engine import rank_descending
 
 router = APIRouter(prefix="/api/v1")
@@ -86,12 +87,14 @@ def divergence_candidates(session: Session = Depends(get_db)) -> list[SectorRada
     if latest is None:
         return []
     names = _theme_names(session)
-    rows = session.execute(
-        select(SectorDailyMetric).where(
-            SectorDailyMetric.trade_date == latest,
-            SectorDailyMetric.divergence_flag.is_(True),
-        )
-    ).scalars().all()
+    version = current_mapping_version(session, asof=latest)
+    q = select(SectorDailyMetric).where(
+        SectorDailyMetric.trade_date == latest,
+        SectorDailyMetric.divergence_flag.is_(True),
+    )
+    if version:
+        q = q.where(SectorDailyMetric.mapping_version == version)
+    rows = session.execute(q).scalars().all()
     rows = [r for r in rows if not r.low_coverage]
     frame = pd.DataFrame(
         [{"theme_id": r.theme_id, "acceleration": _f(r.acceleration)} for r in rows]
@@ -107,21 +110,21 @@ def sector_detail(theme_id: str, session: Session = Depends(get_db)) -> SectorDe
     latest = _latest_date(session)
     if latest is None:
         raise HTTPException(status_code=404, detail="No calculated metrics")
-    metric = session.get(SectorDailyMetric, {"theme_id": theme_id, "trade_date": latest})
-    if metric is None:
-        # composite PK get may not work on all SQLAlchemy versions; query instead
-        metric = session.execute(
-            select(SectorDailyMetric).where(
-                SectorDailyMetric.theme_id == theme_id,
-                SectorDailyMetric.trade_date == latest,
-            )
-        ).scalar_one_or_none()
+    version = current_mapping_version(session, asof=latest)
+    q = select(SectorDailyMetric).where(
+        SectorDailyMetric.theme_id == theme_id,
+        SectorDailyMetric.trade_date == latest,
+    )
+    if version:
+        q = q.where(SectorDailyMetric.mapping_version == version)
+    metric = session.execute(q).scalar_one_or_none()
     if metric is None:
         raise HTTPException(status_code=404, detail=f"Unknown theme {theme_id}")
     names = _theme_names(session)
-    member_ids = session.execute(
-        select(SecurityTheme.security_id).where(SecurityTheme.theme_id == theme_id)
-    ).scalars().all()
+    mq = select(SecurityTheme.security_id).where(SecurityTheme.theme_id == theme_id)
+    if version:
+        mq = mq.where(SecurityTheme.mapping_version == version)
+    member_ids = session.execute(mq).scalars().all()
     stocks = session.execute(
         select(StockDailyMetric).where(
             StockDailyMetric.trade_date == latest,
@@ -165,13 +168,12 @@ def sector_history(
     session: Session = Depends(get_db),
 ) -> SectorHistoryResponse:
     names = _theme_names(session)
+    version = current_mapping_version(session)
+    q = select(SectorDailyMetric).where(SectorDailyMetric.theme_id == theme_id)
+    if version:
+        q = q.where(SectorDailyMetric.mapping_version == version)
     rows = (
-        session.execute(
-            select(SectorDailyMetric)
-            .where(SectorDailyMetric.theme_id == theme_id)
-            .order_by(SectorDailyMetric.trade_date.desc())
-            .limit(sessions)
-        )
+        session.execute(q.order_by(SectorDailyMetric.trade_date.desc()).limit(sessions))
         .scalars()
         .all()
     )
@@ -200,9 +202,11 @@ def _sector_snapshot(
     include_low_coverage: bool = False,
 ) -> list[SectorRadarRow]:
     names = _theme_names(session)
-    rows = session.execute(
-        select(SectorDailyMetric).where(SectorDailyMetric.trade_date == asof)
-    ).scalars().all()
+    version = current_mapping_version(session, asof=asof)
+    q = select(SectorDailyMetric).where(SectorDailyMetric.trade_date == asof)
+    if version:
+        q = q.where(SectorDailyMetric.mapping_version == version)
+    rows = session.execute(q).scalars().all()
     if not include_low_coverage:
         rows = [r for r in rows if not r.low_coverage and not getattr(r, "rank_excluded", False)]
     names = _theme_names(session)

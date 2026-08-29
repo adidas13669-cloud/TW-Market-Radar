@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 
+from app.taxonomy.coverage import COVERAGE_SOURCE, coverage_assignments
 from app.taxonomy.v2_catalog import CONCENTRATED_CONFIDENCE, DEFAULT_CONFIDENCE, MEMBERS, SOURCE, TREE
 
 
@@ -62,42 +63,83 @@ def _parents(theme_id: str, by_id: dict[str, ThemeDef]) -> list[str]:
     return chain
 
 
+def _append_chain(
+    *,
+    rows: list[MemberDef],
+    seen: set[tuple[str, str]],
+    by_id: dict[str, ThemeDef],
+    theme_id: str,
+    security_id: str,
+    confidence: float,
+    rationale: str,
+    source: str,
+) -> None:
+    if theme_id not in by_id:
+        raise ValueError(f"membership references unknown theme {theme_id}")
+    theme = by_id[theme_id]
+    targets = [theme_id, *_parents(theme_id, by_id)]
+    for idx, tid in enumerate(targets):
+        key = (security_id, tid)
+        if key in seen:
+            continue
+        seen.add(key)
+        inherited = idx > 0
+        rows.append(
+            MemberDef(
+                security_id=security_id,
+                theme_id=tid,
+                confidence=confidence,
+                rationale=(f"inherited from {theme_id}" if inherited else rationale),
+                source=source,
+                inherited=inherited,
+            )
+        )
+
+
 def expand_membership(
     themes: list[ThemeDef] | None = None,
     members: dict[str, tuple[str, ...]] | None = None,
+    universe: list[tuple[str, str]] | None = None,
+    include_coverage: bool = True,
 ) -> list[MemberDef]:
     themes = themes if themes is not None else flatten_themes()
     members = members if members is not None else MEMBERS
     by_id = {t.theme_id: t for t in themes}
     rows: list[MemberDef] = []
     seen: set[tuple[str, str]] = set()
+    curated_ids: set[str] = set()
     for theme_id, tickers in members.items():
-        if theme_id not in by_id:
-            raise ValueError(f"membership references unknown theme {theme_id}")
-        theme = by_id[theme_id]
-        conf = CONCENTRATED_CONFIDENCE if theme.concentrated_ok else DEFAULT_CONFIDENCE
-        targets = [theme_id, *_parents(theme_id, by_id)]
+        theme = by_id[theme_id] if theme_id in by_id else None
+        conf = CONCENTRATED_CONFIDENCE if theme and theme.concentrated_ok else DEFAULT_CONFIDENCE
+        primary = f"primary mapping to {theme_id} ({theme.name})" if theme else f"primary mapping to {theme_id}"
         for sid in tickers:
             sid = str(sid).strip()
-            for idx, tid in enumerate(targets):
-                key = (sid, tid)
-                if key in seen:
-                    continue
-                seen.add(key)
-                inherited = idx > 0
-                rows.append(
-                    MemberDef(
-                        security_id=sid,
-                        theme_id=tid,
-                        confidence=conf,
-                        rationale=(
-                            f"inherited from {theme_id}"
-                            if inherited
-                            else f"primary mapping to {theme_id} ({theme.name})"
-                        ),
-                        source=SOURCE,
-                        inherited=inherited,
-                    )
+            curated_ids.add(sid)
+            _append_chain(
+                rows=rows,
+                seen=seen,
+                by_id=by_id,
+                theme_id=theme_id,
+                security_id=sid,
+                confidence=conf,
+                rationale=primary,
+                source=SOURCE,
+            )
+    if include_coverage:
+        extra = coverage_assignments(curated_ids, universe=universe)
+        for theme_id, assignments in extra.items():
+            if theme_id not in by_id:
+                continue
+            for sid, rationale, conf in assignments:
+                _append_chain(
+                    rows=rows,
+                    seen=seen,
+                    by_id=by_id,
+                    theme_id=theme_id,
+                    security_id=sid,
+                    confidence=conf,
+                    rationale=rationale,
+                    source=COVERAGE_SOURCE,
                 )
     return rows
 

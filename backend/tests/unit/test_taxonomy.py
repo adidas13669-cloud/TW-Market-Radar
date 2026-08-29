@@ -1,5 +1,7 @@
 from datetime import date
 
+import pandas as pd
+
 from app.core.config import get_settings
 from app.core.securities import is_common_stock
 from app.services.ranking_engine import rank_sectors
@@ -26,6 +28,8 @@ def test_taxonomy_parent_child_consistency():
     assert not report.unknown_parents
     assert not report.level_mismatch
     assert not report.duplicate_pairs
+    assert report.mapped_securities >= 1500
+    assert report.l2 >= 80
 
 
 def test_membership_rolls_up_to_parents():
@@ -65,5 +69,81 @@ def test_thin_membership_excluded_when_theme_levels_present():
 
 
 def test_current_mapping_version_constant():
-    assert CURRENT_MAPPING_VERSION == "v2-tax-1"
+    assert CURRENT_MAPPING_VERSION == "v2-tax-2"
     assert get_settings().min_theme_members == 3
+
+
+def test_coverage_prefix_and_keywords_expand_unmapped_names():
+    members = expand_membership(
+        universe=[("1103", "嘉泥"), ("2801", "彰銀"), ("2330", "台積電")],
+    )
+    by = {(m.security_id, m.theme_id) for m in members}
+    assert ("1103", "CEMENT") in by
+    assert ("1103", "MATERIALS") in by
+    assert ("2801", "BANK") in by or ("2801", "FINANCIAL") in by
+    # Curated TSMC is not also dumped into the electronics L1 residual via prefix.
+    tsmc_l1 = {m.theme_id for m in members if m.security_id == "2330" and m.theme_id == "ELEC"}
+    assert not tsmc_l1
+
+
+def test_retired_tickers_not_in_curated_members():
+    from app.taxonomy.v2_catalog import MEMBERS
+
+    retired = {"2456", "2809", "2823", "2841", "2856", "2888", "3698", "5102", "6288", "9412"}
+    present = {sid for tickers in MEMBERS.values() for sid in tickers}
+    assert not (retired & present)
+
+
+def test_persist_calculation_keeps_other_mapping_versions(tmp_path):
+    from datetime import date
+
+    from sqlalchemy import create_engine, select
+    from sqlalchemy.orm import sessionmaker
+    from sqlalchemy.pool import StaticPool
+
+    from app.models.entities import Base, SectorDailyMetric, Theme
+    from app.services.persistence import persist_calculation
+    from app.services.pipeline import CalculationResult
+
+    engine = create_engine(
+        "sqlite://",
+        connect_args={"check_same_thread": False},
+        poolclass=StaticPool,
+        future=True,
+    )
+    Base.metadata.create_all(engine)
+    session = sessionmaker(bind=engine, future=True)()
+    session.add(Theme(id="CEMENT", name="水泥"))
+    session.add(
+        SectorDailyMetric(
+            theme_id="CEMENT",
+            trade_date=date(2026, 8, 28),
+            mapping_version="v2-tax-1",
+            rotation_score=10,
+        )
+    )
+    session.commit()
+    result = CalculationResult(
+        stock_daily=pd.DataFrame(),
+        sector_daily=pd.DataFrame(),
+        sector_metrics=pd.DataFrame(
+            [
+                {
+                    "theme_id": "CEMENT",
+                    "trade_date": date(2026, 8, 28),
+                    "rotation_score": 50,
+                    "divergence_flag": False,
+                    "low_coverage": False,
+                    "thin_membership": False,
+                    "rank_excluded": False,
+                }
+            ]
+        ),
+        stock_metrics=pd.DataFrame(),
+    )
+    persist_calculation(session, result, mapping_version="v2-tax-2")
+    session.commit()
+    versions = set(
+        session.execute(select(SectorDailyMetric.mapping_version)).scalars().all()
+    )
+    assert versions == {"v2-tax-1", "v2-tax-2"}

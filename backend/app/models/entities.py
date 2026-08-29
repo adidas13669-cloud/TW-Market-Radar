@@ -149,12 +149,13 @@ class DailyMargin(Base):
 
 class SectorDailyMetric(Base):
     __tablename__ = "sector_daily_metrics"
-    __table_args__ = (UniqueConstraint("theme_id", "trade_date", name="uq_sector_metric"),)
+    __table_args__ = (UniqueConstraint("theme_id", "trade_date", "mapping_version", name="uq_sector_metric_ver"),)
 
     theme_id: Mapped[str] = mapped_column(
         String(32), ForeignKey("themes.id"), primary_key=True
     )
     trade_date: Mapped[date] = mapped_column(Date, primary_key=True)
+    mapping_version: Mapped[str] = mapped_column(String(32), primary_key=True, default="v2-tax-2")
     institutional_flow: Mapped[Decimal | None] = mapped_column(Money, nullable=True)
     flow_5d: Mapped[Decimal | None] = mapped_column(Money, nullable=True)
     avg_5d: Mapped[Decimal | None] = mapped_column(Money, nullable=True)
@@ -179,7 +180,6 @@ class SectorDailyMetric(Base):
     low_coverage: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
     thin_membership: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
     rank_excluded: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
-    mapping_version: Mapped[str | None] = mapped_column(String(32), nullable=True)
 
     theme: Mapped[Theme] = relationship(back_populates="metrics")
 

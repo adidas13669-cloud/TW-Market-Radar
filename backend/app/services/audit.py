@@ -103,9 +103,16 @@ def build_audit_report(session: Session, asof: date | None = None) -> dict:
                     missing_close += 1
 
     metrics = []
+    version = current_mapping_version(session, asof=asof)
     if asof:
-        metrics = session.execute(select(SectorDailyMetric).where(SectorDailyMetric.trade_date == asof)).scalars().all()
-    all_metrics = session.execute(select(SectorDailyMetric)).scalars().all()
+        mq = select(SectorDailyMetric).where(SectorDailyMetric.trade_date == asof)
+        if version:
+            mq = mq.where(SectorDailyMetric.mapping_version == version)
+        metrics = session.execute(mq).scalars().all()
+    all_q = select(SectorDailyMetric)
+    if version:
+        all_q = all_q.where(SectorDailyMetric.mapping_version == version)
+    all_metrics = session.execute(all_q).scalars().all()
     frame = _metrics_frame(all_metrics)
     theme_rows = session.execute(select(Theme)).scalars().all()
     theme_frame = pd.DataFrame(

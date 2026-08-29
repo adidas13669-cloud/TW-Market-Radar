@@ -11,7 +11,7 @@ import pandas as pd
 
 from app.taxonomy.flatten import MemberDef, ThemeDef, expand_membership, flatten_themes
 
-CURRENT_MAPPING_VERSION = "v2-tax-1"
+CURRENT_MAPPING_VERSION = "v2-tax-2"
 TAXONOMY_DIR = Path("data/theme_mapping/v2")
 
 
@@ -36,12 +36,13 @@ def default_meta() -> dict:
         "production_ready": False,
         "notes": (
             "Hierarchical Taiwan equity taxonomy (L1 industry / L2 supply chain / "
-            "L3 investment theme). Many-to-many membership. Not an official TWSE/TPEx file."
+            "L3 investment theme). Curated many-to-many membership plus prefix/name "
+            "coverage expansion. Not an official TWSE/TPEx file."
         ),
     }
 
 
-def load_taxonomy_bundle(path: Path | None = None) -> TaxonomyBundle:
+def load_taxonomy_bundle(path: Path | None = None, *, prefer_csv: bool = False) -> TaxonomyBundle:
     directory = path or TAXONOMY_DIR
     meta = default_meta()
     meta_path = directory / "mapping_meta.json" if directory.is_dir() else directory.with_name("mapping_meta.json")
@@ -49,13 +50,14 @@ def load_taxonomy_bundle(path: Path | None = None) -> TaxonomyBundle:
         meta_path = path
     if meta_path.exists():
         meta = {**meta, **json.loads(meta_path.read_text(encoding="utf-8"))}
+    meta["mapping_version"] = CURRENT_MAPPING_VERSION
     themes = flatten_themes()
     members = expand_membership(themes)
     csv_themes = directory / "themes.csv" if directory.is_dir() else None
     csv_members = directory / "membership.csv" if directory.is_dir() else None
-    if csv_themes and csv_themes.exists():
+    if prefer_csv and csv_themes and csv_themes.exists():
         themes = _themes_from_csv(csv_themes)
-    if csv_members and csv_members.exists():
+    if prefer_csv and csv_members and csv_members.exists():
         members = _members_from_csv(csv_members)
     effective_to = meta.get("effective_to")
     return TaxonomyBundle(

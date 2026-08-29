@@ -82,6 +82,8 @@ STEEL,鋼鐵,鋼鐵,2,MATERIALS,materials,False
 PETROCHEM,石化,石化,2,MATERIALS,materials,False
 CEMENT,水泥,水泥,2,MATERIALS,materials,False
 PLASTIC,塑膠,塑膠,2,MATERIALS,materials,False
+CHEM,化學工業,化學工業,2,MATERIALS,materials,False
+RUBBER,橡膠,橡膠,2,MATERIALS,materials,False
 PAPER,紙業,紙業,2,MATERIALS,materials,False
 GLASS,玻璃,玻璃,2,MATERIALS,materials,False
 TEXTILE,紡織,紡織,2,MATERIALS,materials,False

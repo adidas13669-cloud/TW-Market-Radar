@@ -5,7 +5,7 @@ from sqlalchemy.engine import Engine
 from sqlalchemy.orm import Session, sessionmaker
 
 from app.core.config import get_settings
-from app.models.entities import Base, MappingCatalog, SecurityTheme
+from app.models.entities import Base, MappingCatalog, SectorDailyMetric, SecurityTheme
 
 _engine: Engine | None = None
 _SessionLocal: sessionmaker[Session] | None = None
@@ -39,6 +39,7 @@ def migrate_sqlite_columns(engine: Engine) -> None:
         return
     _rebuild_mapping_catalog(engine)
     _rebuild_security_themes(engine)
+    _rebuild_sector_metrics(engine)
     additions = {
         "themes": [
             ("mapping_version", "VARCHAR(32)"),
@@ -118,6 +119,32 @@ def _rebuild_security_themes(engine: Engine) -> None:
             )
         )
         conn.execute(text("DROP TABLE security_themes_legacy"))
+
+
+def _rebuild_sector_metrics(engine: Engine) -> None:
+    inspector = inspect(engine)
+    if "sector_daily_metrics" not in inspector.get_table_names():
+        return
+    pk = inspector.get_pk_constraint("sector_daily_metrics").get("constrained_columns") or []
+    if set(pk) == {"theme_id", "trade_date", "mapping_version"}:
+        return
+    cols = {c["name"] for c in inspector.get_columns("sector_daily_metrics")}
+    with engine.begin() as conn:
+        conn.execute(text("ALTER TABLE sector_daily_metrics RENAME TO sector_daily_metrics_legacy"))
+    SectorDailyMetric.__table__.create(engine)
+    select_cols = [c["name"] for c in inspect(engine).get_columns("sector_daily_metrics") if c["name"] != "mapping_version"]
+    legacy_avail = cols
+    copy = [c for c in select_cols if c in legacy_avail]
+    version_expr = "mapping_version" if "mapping_version" in cols else "'v2-tax-1'"
+    with engine.begin() as conn:
+        conn.execute(
+            text(
+                f"INSERT OR IGNORE INTO sector_daily_metrics ({', '.join(copy + ['mapping_version'])}) "
+                f"SELECT {', '.join(copy)}, COALESCE({version_expr}, 'v2-tax-1') "
+                f"FROM sector_daily_metrics_legacy"
+            )
+        )
+        conn.execute(text("DROP TABLE sector_daily_metrics_legacy"))
 
 
 def get_db() -> Generator[Session, None, None]:
