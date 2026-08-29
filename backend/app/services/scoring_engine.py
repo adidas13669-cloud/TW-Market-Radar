@@ -84,7 +84,9 @@ def score_cross_section(
             percentiles = {name: _opt_float(row.get(f"{name}_pct")) for name in weights.as_dict()}
             scores.append(rotation_score_row(percentiles, weights))
         ranked = ranked.copy()
-        ranked["rotation_score"] = scores
+        ranked["rotation_score"] = [
+            None if s is None else round(float(s), 4) for s in scores
+        ]
         pieces.append(ranked)
     out = pd.concat(pieces, ignore_index=True)
     out["lifecycle"] = [

@@ -110,6 +110,14 @@ def test_duplicate_ingest_is_idempotent(tmp_path):
     assert n_quotes == n_quotes2
     assert first.providers["TWSE"].quotes == second.providers["TWSE"].quotes
     assert (tmp_path / "2026-08-28" / "twse_quotes.json").exists()
+    from app.models.entities import Security
+
+    tpex_stock = session.get(Security, "3105")
+    twse_stock = session.get(Security, "1101")
+    if tpex_stock is not None:
+        assert tpex_stock.market == "TPEX"
+    if twse_stock is not None:
+        assert twse_stock.market == "TWSE"
 
 
 def test_successful_ingest_is_skipped_on_resume(tmp_path):

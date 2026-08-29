@@ -53,7 +53,6 @@ def _upsert_security(session: Session, security_id: str, name: str, market: str,
         return
     if name and name != security_id:
         obj.name = name
-    obj.market = market
     obj.is_active = is_active
 
 
@@ -469,11 +468,22 @@ def _persist_raw(session: Session, trade_date: date, quotes: pd.DataFrame, flows
     margins_canon = to_margin_notional(margins, quotes) if not margins.empty else margins
 
     ids = set()
+    markets: dict[str, str] = {}
     for frame in (quotes_canon, flows_canon, margins_canon):
         if frame is not None and not frame.empty and "security_id" in frame.columns:
             ids.update(str(s) for s in frame["security_id"].unique())
+    if quotes_canon is not None and not quotes_canon.empty and "market" in quotes_canon.columns:
+        for _, row in quotes_canon.iterrows():
+            markets[str(row["security_id"])] = str(row["market"])
     for sid in ids:
-        _upsert_security(session, sid, sid, Market.TWSE, True)
+        if session.get(Security, sid) is None:
+            pending = False
+            for inst in list(session.new):
+                if isinstance(inst, Security) and inst.id == sid:
+                    pending = True
+                    break
+            if not pending:
+                _upsert_security(session, sid, sid, markets.get(sid, Market.TWSE), True)
 
     if not quotes_canon.empty:
         for _, row in quotes_canon.iterrows():

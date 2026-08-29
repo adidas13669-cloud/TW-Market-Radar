@@ -61,7 +61,10 @@ def assert_lifecycle_consistent(frame: pd.DataFrame) -> None:
         if expected is None:
             continue
         if got is None or str(got) != expected.value:
-            raise InvariantViolation(f"lifecycle {got} != {expected}")
+            raise InvariantViolation(
+                f"lifecycle {got} != {expected} theme={row.get('theme_id')} date={row.get('trade_date')} "
+                f"q={q} score={row.get('rotation_score')}"
+            )
 
 
 def assert_warmup_windows(frame: pd.DataFrame, session_count: int) -> None:
