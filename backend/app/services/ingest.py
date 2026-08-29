@@ -11,7 +11,7 @@ from pathlib import Path
 from typing import Any
 
 import pandas as pd
-from sqlalchemy import select
+from sqlalchemy import delete, select
 from sqlalchemy.orm import Session
 
 from app.core.enums import IngestStatus, Market
@@ -31,13 +31,14 @@ from app.models.entities import (
     Theme,
 )
 from app.services.normalize import to_canonical_flow, to_margin_notional
-from app.services.persistence import persist_calculation, snapshot_from_db
+from app.services.persistence import persist_calculation, snapshot_from_db, current_mapping_version
 from app.services.pipeline import run_calculation
 from app.services.validation import SessionValidation, validate_session
+from app.taxonomy.loader import TAXONOMY_DIR, TaxonomyBundle, load_taxonomy_bundle
 
 logger = logging.getLogger(__name__)
 
-DEFAULT_MAPPING = Path("data/theme_mapping/seed_themes.csv")
+DEFAULT_MAPPING = Path("data/theme_mapping/v2")
 DEFAULT_PAYLOAD_DIR = Path("data/raw_payloads")
 
 
@@ -86,9 +87,16 @@ def save_payload(directory: Path, trade_date: date, name: str, payload: Any) -> 
 
 
 def load_mapping_meta(mapping_path: Path = DEFAULT_MAPPING) -> dict[str, Any]:
-    meta_path = mapping_path.with_name("mapping_meta.json")
+    if mapping_path.is_dir():
+        meta_path = mapping_path / "mapping_meta.json"
+    else:
+        meta_path = mapping_path.with_name("mapping_meta.json")
     if meta_path.exists():
         return json.loads(meta_path.read_text(encoding="utf-8"))
+    if mapping_path.is_dir() or mapping_path == TAXONOMY_DIR:
+        from app.taxonomy.loader import default_meta
+
+        return default_meta()
     return {
         "mapping_version": "seed-v1",
         "mapping_source": str(mapping_path),
@@ -98,48 +106,106 @@ def load_mapping_meta(mapping_path: Path = DEFAULT_MAPPING) -> dict[str, Any]:
     }
 
 
+def persist_taxonomy_bundle(session: Session, bundle: TaxonomyBundle) -> None:
+    """Insert a mapping version without deleting other versions' memberships."""
+    session.merge(
+        MappingCatalog(
+            mapping_version=bundle.mapping_version,
+            mapping_source=bundle.mapping_source,
+            effective_from=bundle.effective_from,
+            effective_to=bundle.effective_to,
+            production_ready=bundle.production_ready,
+            notes=bundle.notes,
+        )
+    )
+    for theme in bundle.themes:
+        session.merge(
+            Theme(
+                id=theme.theme_id,
+                name=theme.name,
+                theme_level=theme.theme_level,
+                parent_theme_id=theme.parent_theme_id,
+                theme_category=theme.theme_category,
+                concentrated_ok=theme.concentrated_ok,
+                mapping_version=bundle.mapping_version,
+                mapping_source=bundle.mapping_source,
+                effective_from=bundle.effective_from,
+                effective_to=bundle.effective_to,
+            )
+        )
+    session.execute(delete(SecurityTheme).where(SecurityTheme.mapping_version == bundle.mapping_version))
+    session.flush()
+    seen_sec: set[str] = set()
+    for member in bundle.members:
+        if member.security_id not in seen_sec:
+            _upsert_security(session, member.security_id, member.security_id, Market.TWSE, True)
+            seen_sec.add(member.security_id)
+        session.add(
+            SecurityTheme(
+                security_id=member.security_id,
+                theme_id=member.theme_id,
+                mapping_version=bundle.mapping_version,
+                effective_from=bundle.effective_from,
+                effective_to=bundle.effective_to,
+                confidence=Decimal(str(member.confidence)),
+                rationale=member.rationale,
+                source=member.source,
+                inherited=member.inherited,
+            )
+        )
+    session.flush()
+
+
 def seed_theme_mapping(session: Session, mapping_path: Path = DEFAULT_MAPPING) -> None:
+    if mapping_path.is_dir() or mapping_path == TAXONOMY_DIR:
+        persist_taxonomy_bundle(session, load_taxonomy_bundle(mapping_path if mapping_path.is_dir() else TAXONOMY_DIR))
+        return
     if not mapping_path.exists():
         return
     meta = load_mapping_meta(mapping_path)
     effective = date.fromisoformat(str(meta["effective_from"])) if meta.get("effective_from") else None
-    catalog = session.get(MappingCatalog, 1)
-    if catalog is None:
-        session.add(
-            MappingCatalog(
-                id=1,
-                mapping_version=str(meta.get("mapping_version") or "seed-v1"),
-                mapping_source=str(meta.get("mapping_source") or mapping_path),
-                effective_from=effective or date(2026, 6, 1),
-                production_ready=bool(meta.get("production_ready")),
-                notes=meta.get("notes"),
-            )
+    version = str(meta.get("mapping_version") or "seed-v1")
+    session.merge(
+        MappingCatalog(
+            mapping_version=version,
+            mapping_source=str(meta.get("mapping_source") or mapping_path),
+            effective_from=effective or date(2026, 6, 1),
+            production_ready=bool(meta.get("production_ready")),
+            notes=meta.get("notes"),
         )
-    else:
-        catalog.mapping_version = str(meta.get("mapping_version") or catalog.mapping_version)
-        catalog.mapping_source = str(meta.get("mapping_source") or catalog.mapping_source)
-        if effective:
-            catalog.effective_from = effective
-        catalog.production_ready = bool(meta.get("production_ready"))
-        catalog.notes = meta.get("notes")
+    )
     seen_sec: set[str] = set()
     seen_theme: set[str] = set()
+    session.execute(delete(SecurityTheme).where(SecurityTheme.mapping_version == version))
+    session.flush()
     for rec in load_theme_mapping_csv(mapping_path):
         if rec.theme_id not in seen_theme:
             session.merge(
                 Theme(
                     id=rec.theme_id,
                     name=rec.theme_name or rec.theme_id,
-                    mapping_version=str(meta.get("mapping_version") or "seed-v1"),
+                    mapping_version=version,
                     mapping_source=str(meta.get("mapping_source") or mapping_path),
                     effective_from=effective,
+                    theme_level=3,
+                    theme_category="seed",
                 )
             )
             seen_theme.add(rec.theme_id)
         if rec.security_id not in seen_sec:
             _upsert_security(session, rec.security_id, rec.security_id, Market.TWSE, True)
             seen_sec.add(rec.security_id)
-        session.merge(SecurityTheme(security_id=rec.security_id, theme_id=rec.theme_id))
+        session.add(
+            SecurityTheme(
+                security_id=rec.security_id,
+                theme_id=rec.theme_id,
+                mapping_version=version,
+                effective_from=effective,
+                confidence=Decimal("1.0"),
+                rationale="seed mapping",
+                source=str(mapping_path),
+            )
+        )
     session.flush()
 
 
@@ -252,7 +318,7 @@ def ingest_trade_date(
     if recompute_metrics:
         snap = snapshot_from_db(session)
         calc = run_calculation(snap)
-        persist_calculation(session, calc)
+        persist_calculation(session, calc, mapping_version=current_mapping_version(session, asof=trade_date))
         latest = calc.sector_metrics[calc.sector_metrics["trade_date"].map(lambda d: pd.Timestamp(d).date()) == trade_date]
         if latest.empty and not calc.sector_metrics.empty:
             latest = calc.sector_metrics

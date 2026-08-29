@@ -1,0 +1,1109 @@
+security_id,theme_id,confidence,rationale,source,inherited
+2330,SEMI_FOUNDRY,0.75,primary mapping to SEMI_FOUNDRY (晶圓代工),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2330,SEMI,0.75,inherited from SEMI_FOUNDRY,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2303,SEMI_FOUNDRY,0.75,primary mapping to SEMI_FOUNDRY (晶圓代工),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2303,SEMI,0.75,inherited from SEMI_FOUNDRY,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+5347,SEMI_FOUNDRY,0.75,primary mapping to SEMI_FOUNDRY (晶圓代工),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+5347,SEMI,0.75,inherited from SEMI_FOUNDRY,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+6770,SEMI_FOUNDRY,0.75,primary mapping to SEMI_FOUNDRY (晶圓代工),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6770,SEMI,0.75,inherited from SEMI_FOUNDRY,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2330,SEMI_COWOS,0.7,primary mapping to SEMI_COWOS (CoWoS),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3711,SEMI_COWOS,0.7,primary mapping to SEMI_COWOS (CoWoS),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3711,SEMI_FOUNDRY,0.7,inherited from SEMI_COWOS,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3711,SEMI,0.7,inherited from SEMI_COWOS,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3037,SEMI_COWOS,0.7,primary mapping to SEMI_COWOS (CoWoS),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3037,SEMI_FOUNDRY,0.7,inherited from SEMI_COWOS,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3037,SEMI,0.7,inherited from SEMI_COWOS,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3653,SEMI_COWOS,0.7,primary mapping to SEMI_COWOS (CoWoS),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3653,SEMI_FOUNDRY,0.7,inherited from SEMI_COWOS,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3653,SEMI,0.7,inherited from SEMI_COWOS,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3189,SEMI_COWOS,0.7,primary mapping to SEMI_COWOS (CoWoS),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3189,SEMI_FOUNDRY,0.7,inherited from SEMI_COWOS,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3189,SEMI,0.7,inherited from SEMI_COWOS,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2454,SEMI_IC_DESIGN,0.75,primary mapping to SEMI_IC_DESIGN (IC設計),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2454,SEMI,0.75,inherited from SEMI_IC_DESIGN,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3034,SEMI_IC_DESIGN,0.75,primary mapping to SEMI_IC_DESIGN (IC設計),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3034,SEMI,0.75,inherited from SEMI_IC_DESIGN,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2379,SEMI_IC_DESIGN,0.75,primary mapping to SEMI_IC_DESIGN (IC設計),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2379,SEMI,0.75,inherited from SEMI_IC_DESIGN,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+6415,SEMI_IC_DESIGN,0.75,primary mapping to SEMI_IC_DESIGN (IC設計),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6415,SEMI,0.75,inherited from SEMI_IC_DESIGN,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+4961,SEMI_IC_DESIGN,0.75,primary mapping to SEMI_IC_DESIGN (IC設計),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+4961,SEMI,0.75,inherited from SEMI_IC_DESIGN,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3529,SEMI_IC_DESIGN,0.75,primary mapping to SEMI_IC_DESIGN (IC設計),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3529,SEMI,0.75,inherited from SEMI_IC_DESIGN,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+8016,SEMI_IC_DESIGN,0.75,primary mapping to SEMI_IC_DESIGN (IC設計),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+8016,SEMI,0.75,inherited from SEMI_IC_DESIGN,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+5269,SEMI_IC_DESIGN,0.75,primary mapping to SEMI_IC_DESIGN (IC設計),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+5269,SEMI,0.75,inherited from SEMI_IC_DESIGN,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3443,SEMI_IC_DESIGN,0.75,primary mapping to SEMI_IC_DESIGN (IC設計),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3443,SEMI,0.75,inherited from SEMI_IC_DESIGN,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+6643,SEMI_IC_DESIGN,0.75,primary mapping to SEMI_IC_DESIGN (IC設計),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6643,SEMI,0.75,inherited from SEMI_IC_DESIGN,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+4919,SEMI_IC_DESIGN,0.75,primary mapping to SEMI_IC_DESIGN (IC設計),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+4919,SEMI,0.75,inherited from SEMI_IC_DESIGN,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3035,SEMI_IC_DESIGN,0.75,primary mapping to SEMI_IC_DESIGN (IC設計),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3035,SEMI,0.75,inherited from SEMI_IC_DESIGN,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2401,SEMI_IC_DESIGN,0.75,primary mapping to SEMI_IC_DESIGN (IC設計),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2401,SEMI,0.75,inherited from SEMI_IC_DESIGN,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+4968,SEMI_IC_DESIGN,0.75,primary mapping to SEMI_IC_DESIGN (IC設計),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+4968,SEMI,0.75,inherited from SEMI_IC_DESIGN,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2454,SEMI_ANALOG,0.75,primary mapping to SEMI_ANALOG (類比IC),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6415,SEMI_ANALOG,0.75,primary mapping to SEMI_ANALOG (類比IC),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+8081,SEMI_ANALOG,0.75,primary mapping to SEMI_ANALOG (類比IC),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+8081,SEMI_IC_DESIGN,0.75,inherited from SEMI_ANALOG,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+8081,SEMI,0.75,inherited from SEMI_ANALOG,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3227,SEMI_ANALOG,0.75,primary mapping to SEMI_ANALOG (類比IC),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3227,SEMI_IC_DESIGN,0.75,inherited from SEMI_ANALOG,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3227,SEMI,0.75,inherited from SEMI_ANALOG,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3437,SEMI_ANALOG,0.75,primary mapping to SEMI_ANALOG (類比IC),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3437,SEMI_IC_DESIGN,0.75,inherited from SEMI_ANALOG,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3437,SEMI,0.75,inherited from SEMI_ANALOG,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3558,SEMI_ANALOG,0.75,primary mapping to SEMI_ANALOG (類比IC),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3558,SEMI_IC_DESIGN,0.75,inherited from SEMI_ANALOG,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3558,SEMI,0.75,inherited from SEMI_ANALOG,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+4919,SEMI_MCU,0.75,primary mapping to SEMI_MCU (MCU),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2454,SEMI_MCU,0.75,primary mapping to SEMI_MCU (MCU),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3227,SEMI_MCU,0.75,primary mapping to SEMI_MCU (MCU),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6202,SEMI_MCU,0.75,primary mapping to SEMI_MCU (MCU),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6202,SEMI_IC_DESIGN,0.75,inherited from SEMI_MCU,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+6202,SEMI,0.75,inherited from SEMI_MCU,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3041,SEMI_MCU,0.75,primary mapping to SEMI_MCU (MCU),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3041,SEMI_IC_DESIGN,0.75,inherited from SEMI_MCU,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3041,SEMI,0.75,inherited from SEMI_MCU,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2379,SEMI_RF,0.75,primary mapping to SEMI_RF (射頻IC),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+4968,SEMI_RF,0.75,primary mapping to SEMI_RF (射頻IC),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3105,SEMI_RF,0.75,primary mapping to SEMI_RF (射頻IC),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3105,SEMI_IC_DESIGN,0.75,inherited from SEMI_RF,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3105,SEMI,0.75,inherited from SEMI_RF,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2455,SEMI_RF,0.75,primary mapping to SEMI_RF (射頻IC),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2455,SEMI_IC_DESIGN,0.75,inherited from SEMI_RF,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2455,SEMI,0.75,inherited from SEMI_RF,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+5347,SEMI_RF,0.75,primary mapping to SEMI_RF (射頻IC),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+5347,SEMI_IC_DESIGN,0.75,inherited from SEMI_RF,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3711,SEMI_PACKAGING,0.75,primary mapping to SEMI_PACKAGING (封裝測試),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6239,SEMI_PACKAGING,0.75,primary mapping to SEMI_PACKAGING (封裝測試),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6239,SEMI,0.75,inherited from SEMI_PACKAGING,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2329,SEMI_PACKAGING,0.75,primary mapping to SEMI_PACKAGING (封裝測試),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2329,SEMI,0.75,inherited from SEMI_PACKAGING,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2449,SEMI_PACKAGING,0.75,primary mapping to SEMI_PACKAGING (封裝測試),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2449,SEMI,0.75,inherited from SEMI_PACKAGING,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2441,SEMI_PACKAGING,0.75,primary mapping to SEMI_PACKAGING (封裝測試),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2441,SEMI,0.75,inherited from SEMI_PACKAGING,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3374,SEMI_PACKAGING,0.75,primary mapping to SEMI_PACKAGING (封裝測試),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3374,SEMI,0.75,inherited from SEMI_PACKAGING,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3264,SEMI_PACKAGING,0.75,primary mapping to SEMI_PACKAGING (封裝測試),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3264,SEMI,0.75,inherited from SEMI_PACKAGING,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3711,SEMI_ADV_PACK,0.75,primary mapping to SEMI_ADV_PACK (先進封裝),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6239,SEMI_ADV_PACK,0.75,primary mapping to SEMI_ADV_PACK (先進封裝),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3653,SEMI_ADV_PACK,0.75,primary mapping to SEMI_ADV_PACK (先進封裝),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3653,SEMI_PACKAGING,0.75,inherited from SEMI_ADV_PACK,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2330,SEMI_ADV_PACK,0.75,primary mapping to SEMI_ADV_PACK (先進封裝),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2330,SEMI_PACKAGING,0.75,inherited from SEMI_ADV_PACK,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3189,SEMI_ADV_PACK,0.75,primary mapping to SEMI_ADV_PACK (先進封裝),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3189,SEMI_PACKAGING,0.75,inherited from SEMI_ADV_PACK,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3037,SEMI_ABF,0.7,primary mapping to SEMI_ABF (ABF載板),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3037,SEMI_PACKAGING,0.7,inherited from SEMI_ABF,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+8046,SEMI_ABF,0.7,primary mapping to SEMI_ABF (ABF載板),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+8046,SEMI_PACKAGING,0.7,inherited from SEMI_ABF,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+8046,SEMI,0.7,inherited from SEMI_ABF,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3189,SEMI_ABF,0.7,primary mapping to SEMI_ABF (ABF載板),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2368,SEMI_ABF,0.7,primary mapping to SEMI_ABF (ABF載板),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2368,SEMI_PACKAGING,0.7,inherited from SEMI_ABF,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2368,SEMI,0.7,inherited from SEMI_ABF,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2449,SEMI_TEST,0.75,primary mapping to SEMI_TEST (測試與探針),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6510,SEMI_TEST,0.75,primary mapping to SEMI_TEST (測試與探針),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6510,SEMI_PACKAGING,0.75,inherited from SEMI_TEST,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+6510,SEMI,0.75,inherited from SEMI_TEST,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3264,SEMI_TEST,0.75,primary mapping to SEMI_TEST (測試與探針),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3374,SEMI_TEST,0.75,primary mapping to SEMI_TEST (測試與探針),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3680,SEMI_TEST,0.75,primary mapping to SEMI_TEST (測試與探針),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3680,SEMI_PACKAGING,0.75,inherited from SEMI_TEST,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3680,SEMI,0.75,inherited from SEMI_TEST,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2408,SEMI_MEMORY,0.75,primary mapping to SEMI_MEMORY (記憶體),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2408,SEMI,0.75,inherited from SEMI_MEMORY,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2344,SEMI_MEMORY,0.75,primary mapping to SEMI_MEMORY (記憶體),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2344,SEMI,0.75,inherited from SEMI_MEMORY,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2337,SEMI_MEMORY,0.75,primary mapping to SEMI_MEMORY (記憶體),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2337,SEMI,0.75,inherited from SEMI_MEMORY,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+8299,SEMI_MEMORY,0.75,primary mapping to SEMI_MEMORY (記憶體),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+8299,SEMI,0.75,inherited from SEMI_MEMORY,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3260,SEMI_MEMORY,0.75,primary mapping to SEMI_MEMORY (記憶體),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3260,SEMI,0.75,inherited from SEMI_MEMORY,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+8271,SEMI_MEMORY,0.75,primary mapping to SEMI_MEMORY (記憶體),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+8271,SEMI,0.75,inherited from SEMI_MEMORY,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+6531,SEMI_MEMORY,0.75,primary mapping to SEMI_MEMORY (記憶體),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6531,SEMI,0.75,inherited from SEMI_MEMORY,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+4967,SEMI_MEMORY,0.75,primary mapping to SEMI_MEMORY (記憶體),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+4967,SEMI,0.75,inherited from SEMI_MEMORY,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2408,SEMI_DRAM,0.75,primary mapping to SEMI_DRAM (DRAM),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2344,SEMI_DRAM,0.75,primary mapping to SEMI_DRAM (DRAM),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3260,SEMI_DRAM,0.75,primary mapping to SEMI_DRAM (DRAM),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+8271,SEMI_DRAM,0.75,primary mapping to SEMI_DRAM (DRAM),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2337,SEMI_NAND,0.75,primary mapping to SEMI_NAND (NAND),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+8299,SEMI_NAND,0.75,primary mapping to SEMI_NAND (NAND),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2344,SEMI_NAND,0.75,primary mapping to SEMI_NAND (NAND),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3260,SEMI_NAND,0.75,primary mapping to SEMI_NAND (NAND),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2454,SEMI_HBM,0.7,primary mapping to SEMI_HBM (HBM),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2454,SEMI_MEMORY,0.7,inherited from SEMI_HBM,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2330,SEMI_HBM,0.7,primary mapping to SEMI_HBM (HBM),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2330,SEMI_MEMORY,0.7,inherited from SEMI_HBM,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+6531,SEMI_HBM,0.7,primary mapping to SEMI_HBM (HBM),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2408,SEMI_HBM,0.7,primary mapping to SEMI_HBM (HBM),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6488,SEMI_WAFER,0.75,primary mapping to SEMI_WAFER (矽晶圓),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6488,SEMI,0.75,inherited from SEMI_WAFER,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+5483,SEMI_WAFER,0.75,primary mapping to SEMI_WAFER (矽晶圓),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+5483,SEMI,0.75,inherited from SEMI_WAFER,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3532,SEMI_WAFER,0.75,primary mapping to SEMI_WAFER (矽晶圓),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3532,SEMI,0.75,inherited from SEMI_WAFER,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3016,SEMI_WAFER,0.75,primary mapping to SEMI_WAFER (矽晶圓),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3016,SEMI,0.75,inherited from SEMI_WAFER,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+6182,SEMI_WAFER,0.75,primary mapping to SEMI_WAFER (矽晶圓),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6182,SEMI,0.75,inherited from SEMI_WAFER,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3686,SEMI_WAFER,0.75,primary mapping to SEMI_WAFER (矽晶圓),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3686,SEMI,0.75,inherited from SEMI_WAFER,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+6196,SEMI_EQUIP,0.75,primary mapping to SEMI_EQUIP (半導體設備),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6196,SEMI,0.75,inherited from SEMI_EQUIP,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3680,SEMI_EQUIP,0.75,primary mapping to SEMI_EQUIP (半導體設備),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3131,SEMI_EQUIP,0.75,primary mapping to SEMI_EQUIP (半導體設備),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3131,SEMI,0.75,inherited from SEMI_EQUIP,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3583,SEMI_EQUIP,0.75,primary mapping to SEMI_EQUIP (半導體設備),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3583,SEMI,0.75,inherited from SEMI_EQUIP,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3563,SEMI_EQUIP,0.75,primary mapping to SEMI_EQUIP (半導體設備),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3563,SEMI,0.75,inherited from SEMI_EQUIP,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+5434,SEMI_EQUIP,0.75,primary mapping to SEMI_EQUIP (半導體設備),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+5434,SEMI,0.75,inherited from SEMI_EQUIP,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2467,SEMI_EQUIP,0.75,primary mapping to SEMI_EQUIP (半導體設備),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2467,SEMI,0.75,inherited from SEMI_EQUIP,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3551,SEMI_EQUIP,0.75,primary mapping to SEMI_EQUIP (半導體設備),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3551,SEMI,0.75,inherited from SEMI_EQUIP,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+8028,SEMI_EQUIP,0.75,primary mapping to SEMI_EQUIP (半導體設備),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+8028,SEMI,0.75,inherited from SEMI_EQUIP,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+6640,SEMI_EQUIP,0.75,primary mapping to SEMI_EQUIP (半導體設備),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6640,SEMI,0.75,inherited from SEMI_EQUIP,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1723,SEMI_MATERIALS,0.75,primary mapping to SEMI_MATERIALS (半導體材料),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1723,SEMI,0.75,inherited from SEMI_MATERIALS,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1711,SEMI_MATERIALS,0.75,primary mapping to SEMI_MATERIALS (半導體材料),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1711,SEMI,0.75,inherited from SEMI_MATERIALS,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+6274,SEMI_MATERIALS,0.75,primary mapping to SEMI_MATERIALS (半導體材料),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6274,SEMI,0.75,inherited from SEMI_MATERIALS,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+4306,SEMI_MATERIALS,0.75,primary mapping to SEMI_MATERIALS (半導體材料),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+4306,SEMI,0.75,inherited from SEMI_MATERIALS,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+6271,SEMI_MATERIALS,0.75,primary mapping to SEMI_MATERIALS (半導體材料),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6271,SEMI,0.75,inherited from SEMI_MATERIALS,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+4770,SEMI_MATERIALS,0.75,primary mapping to SEMI_MATERIALS (半導體材料),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+4770,SEMI,0.75,inherited from SEMI_MATERIALS,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1711,SEMI_CHEM,0.75,primary mapping to SEMI_CHEM (製程化學品),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1723,SEMI_CHEM,0.75,primary mapping to SEMI_CHEM (製程化學品),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+4306,SEMI_CHEM,0.75,primary mapping to SEMI_CHEM (製程化學品),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+4770,SEMI_CHEM,0.75,primary mapping to SEMI_CHEM (製程化學品),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1733,SEMI_CHEM,0.75,primary mapping to SEMI_CHEM (製程化學品),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1733,SEMI_MATERIALS,0.75,inherited from SEMI_CHEM,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1733,SEMI,0.75,inherited from SEMI_CHEM,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1723,SEMI_GAS,0.7,primary mapping to SEMI_GAS (特用氣體),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1708,SEMI_GAS,0.7,primary mapping to SEMI_GAS (特用氣體),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1708,SEMI_MATERIALS,0.7,inherited from SEMI_GAS,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1708,SEMI,0.7,inherited from SEMI_GAS,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+4739,SEMI_GAS,0.7,primary mapping to SEMI_GAS (特用氣體),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+4739,SEMI_MATERIALS,0.7,inherited from SEMI_GAS,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+4739,SEMI,0.7,inherited from SEMI_GAS,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3105,SEMI_COMPOUND,0.75,primary mapping to SEMI_COMPOUND (化合物半導體),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2455,SEMI_COMPOUND,0.75,primary mapping to SEMI_COMPOUND (化合物半導體),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+8086,SEMI_COMPOUND,0.75,primary mapping to SEMI_COMPOUND (化合物半導體),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+8086,SEMI,0.75,inherited from SEMI_COMPOUND,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+4974,SEMI_COMPOUND,0.75,primary mapping to SEMI_COMPOUND (化合物半導體),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+4974,SEMI,0.75,inherited from SEMI_COMPOUND,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+4991,SEMI_COMPOUND,0.75,primary mapping to SEMI_COMPOUND (化合物半導體),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+4991,SEMI,0.75,inherited from SEMI_COMPOUND,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2382,AI_SERVER,0.75,primary mapping to AI_SERVER (AI伺服器),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2382,AI_INFRA,0.75,inherited from AI_SERVER,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+6669,AI_SERVER,0.75,primary mapping to AI_SERVER (AI伺服器),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6669,AI_INFRA,0.75,inherited from AI_SERVER,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3231,AI_SERVER,0.75,primary mapping to AI_SERVER (AI伺服器),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3231,AI_INFRA,0.75,inherited from AI_SERVER,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2356,AI_SERVER,0.75,primary mapping to AI_SERVER (AI伺服器),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2356,AI_INFRA,0.75,inherited from AI_SERVER,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2317,AI_SERVER,0.75,primary mapping to AI_SERVER (AI伺服器),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2317,AI_INFRA,0.75,inherited from AI_SERVER,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+8210,AI_SERVER,0.75,primary mapping to AI_SERVER (AI伺服器),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+8210,AI_INFRA,0.75,inherited from AI_SERVER,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3706,AI_SERVER,0.75,primary mapping to AI_SERVER (AI伺服器),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3706,AI_INFRA,0.75,inherited from AI_SERVER,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2382,AI_GB200,0.75,primary mapping to AI_GB200 (GB200/GB300供應鏈),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6669,AI_GB200,0.75,primary mapping to AI_GB200 (GB200/GB300供應鏈),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3231,AI_GB200,0.75,primary mapping to AI_GB200 (GB200/GB300供應鏈),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2356,AI_GB200,0.75,primary mapping to AI_GB200 (GB200/GB300供應鏈),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2317,AI_GB200,0.75,primary mapping to AI_GB200 (GB200/GB300供應鏈),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3017,AI_GB200,0.75,primary mapping to AI_GB200 (GB200/GB300供應鏈),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3017,AI_SERVER,0.75,inherited from AI_GB200,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3017,AI_INFRA,0.75,inherited from AI_GB200,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3324,AI_GB200,0.75,primary mapping to AI_GB200 (GB200/GB300供應鏈),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3324,AI_SERVER,0.75,inherited from AI_GB200,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3324,AI_INFRA,0.75,inherited from AI_GB200,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3653,AI_GB200,0.75,primary mapping to AI_GB200 (GB200/GB300供應鏈),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3653,AI_SERVER,0.75,inherited from AI_GB200,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3653,AI_INFRA,0.75,inherited from AI_GB200,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2308,AI_GB200,0.75,primary mapping to AI_GB200 (GB200/GB300供應鏈),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2308,AI_SERVER,0.75,inherited from AI_GB200,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2308,AI_INFRA,0.75,inherited from AI_GB200,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2382,SERVER_ODM,0.75,primary mapping to SERVER_ODM (伺服器ODM),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3231,SERVER_ODM,0.75,primary mapping to SERVER_ODM (伺服器ODM),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2356,SERVER_ODM,0.75,primary mapping to SERVER_ODM (伺服器ODM),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6669,SERVER_ODM,0.75,primary mapping to SERVER_ODM (伺服器ODM),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3706,SERVER_ODM,0.75,primary mapping to SERVER_ODM (伺服器ODM),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6117,SERVER_ODM,0.75,primary mapping to SERVER_ODM (伺服器ODM),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6117,AI_INFRA,0.75,inherited from SERVER_ODM,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2376,SERVER_ODM,0.75,primary mapping to SERVER_ODM (伺服器ODM),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2376,AI_INFRA,0.75,inherited from SERVER_ODM,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2377,SERVER_ODM,0.75,primary mapping to SERVER_ODM (伺服器ODM),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2377,AI_INFRA,0.75,inherited from SERVER_ODM,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2376,GPU_CHAIN,0.7,primary mapping to GPU_CHAIN (GPU供應鏈),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2377,GPU_CHAIN,0.7,primary mapping to GPU_CHAIN (GPU供應鏈),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2357,GPU_CHAIN,0.7,primary mapping to GPU_CHAIN (GPU供應鏈),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2357,AI_INFRA,0.7,inherited from GPU_CHAIN,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2454,GPU_CHAIN,0.7,primary mapping to GPU_CHAIN (GPU供應鏈),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2454,AI_INFRA,0.7,inherited from GPU_CHAIN,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+8299,GPU_CHAIN,0.7,primary mapping to GPU_CHAIN (GPU供應鏈),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+8299,AI_INFRA,0.7,inherited from GPU_CHAIN,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2465,GPU_CHAIN,0.7,primary mapping to GPU_CHAIN (GPU供應鏈),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2465,AI_INFRA,0.7,inherited from GPU_CHAIN,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2308,AI_POWER,0.75,primary mapping to AI_POWER (電源供應),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6409,AI_POWER,0.75,primary mapping to AI_POWER (電源供應),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6409,AI_INFRA,0.75,inherited from AI_POWER,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1605,AI_POWER,0.75,primary mapping to AI_POWER (電源供應),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1605,AI_INFRA,0.75,inherited from AI_POWER,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1513,AI_POWER,0.75,primary mapping to AI_POWER (電源供應),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1513,AI_INFRA,0.75,inherited from AI_POWER,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2421,AI_POWER,0.75,primary mapping to AI_POWER (電源供應),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2421,AI_INFRA,0.75,inherited from AI_POWER,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3044,AI_POWER,0.75,primary mapping to AI_POWER (電源供應),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3044,AI_INFRA,0.75,inherited from AI_POWER,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2308,AI_BBU,0.75,primary mapping to AI_BBU (BBU備電),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6409,AI_BBU,0.75,primary mapping to AI_BBU (BBU備電),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1513,AI_BBU,0.75,primary mapping to AI_BBU (BBU備電),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1605,AI_BBU,0.75,primary mapping to AI_BBU (BBU備電),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3017,AI_COOLING,0.75,primary mapping to AI_COOLING (散熱),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3324,AI_COOLING,0.75,primary mapping to AI_COOLING (散熱),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3653,AI_COOLING,0.75,primary mapping to AI_COOLING (散熱),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2421,AI_COOLING,0.75,primary mapping to AI_COOLING (散熱),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2392,AI_COOLING,0.75,primary mapping to AI_COOLING (散熱),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2392,AI_INFRA,0.75,inherited from AI_COOLING,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+6235,AI_COOLING,0.75,primary mapping to AI_COOLING (散熱),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6235,AI_INFRA,0.75,inherited from AI_COOLING,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3017,AI_LIQUID,0.75,primary mapping to AI_LIQUID (液冷),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3324,AI_LIQUID,0.75,primary mapping to AI_LIQUID (液冷),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3653,AI_LIQUID,0.75,primary mapping to AI_LIQUID (液冷),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2392,AI_LIQUID,0.75,primary mapping to AI_LIQUID (液冷),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2467,AI_LIQUID,0.75,primary mapping to AI_LIQUID (液冷),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2467,AI_COOLING,0.75,inherited from AI_LIQUID,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2467,AI_INFRA,0.75,inherited from AI_LIQUID,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3017,AI_THERMAL,0.75,primary mapping to AI_THERMAL (熱模組與風扇),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3324,AI_THERMAL,0.75,primary mapping to AI_THERMAL (熱模組與風扇),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2421,AI_THERMAL,0.75,primary mapping to AI_THERMAL (熱模組與風扇),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6235,AI_THERMAL,0.75,primary mapping to AI_THERMAL (熱模組與風扇),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3321,AI_THERMAL,0.75,primary mapping to AI_THERMAL (熱模組與風扇),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3321,AI_COOLING,0.75,inherited from AI_THERMAL,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3321,AI_INFRA,0.75,inherited from AI_THERMAL,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2345,AI_SWITCH,0.75,primary mapping to AI_SWITCH (交換器),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2345,AI_NETWORK,0.75,inherited from AI_SWITCH,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2345,AI_INFRA,0.75,inherited from AI_SWITCH,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3380,AI_SWITCH,0.75,primary mapping to AI_SWITCH (交換器),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3380,AI_NETWORK,0.75,inherited from AI_SWITCH,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3380,AI_INFRA,0.75,inherited from AI_SWITCH,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3596,AI_SWITCH,0.75,primary mapping to AI_SWITCH (交換器),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3596,AI_NETWORK,0.75,inherited from AI_SWITCH,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3596,AI_INFRA,0.75,inherited from AI_SWITCH,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+5388,AI_SWITCH,0.75,primary mapping to AI_SWITCH (交換器),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+5388,AI_NETWORK,0.75,inherited from AI_SWITCH,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+5388,AI_INFRA,0.75,inherited from AI_SWITCH,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3704,AI_SWITCH,0.75,primary mapping to AI_SWITCH (交換器),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3704,AI_NETWORK,0.75,inherited from AI_SWITCH,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3704,AI_INFRA,0.75,inherited from AI_SWITCH,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2419,AI_SWITCH,0.75,primary mapping to AI_SWITCH (交換器),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2419,AI_NETWORK,0.75,inherited from AI_SWITCH,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2419,AI_INFRA,0.75,inherited from AI_SWITCH,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2345,AI_800G,0.75,primary mapping to AI_800G (800G/1.6T網路),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+4977,AI_800G,0.75,primary mapping to AI_800G (800G/1.6T網路),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+4977,AI_NETWORK,0.75,inherited from AI_800G,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+4977,AI_INFRA,0.75,inherited from AI_800G,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+6442,AI_800G,0.75,primary mapping to AI_800G (800G/1.6T網路),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6442,AI_NETWORK,0.75,inherited from AI_800G,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+6442,AI_INFRA,0.75,inherited from AI_800G,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3363,AI_800G,0.75,primary mapping to AI_800G (800G/1.6T網路),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3363,AI_NETWORK,0.75,inherited from AI_800G,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3363,AI_INFRA,0.75,inherited from AI_800G,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3081,AI_800G,0.75,primary mapping to AI_800G (800G/1.6T網路),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3081,AI_NETWORK,0.75,inherited from AI_800G,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3081,AI_INFRA,0.75,inherited from AI_800G,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+4979,AI_800G,0.75,primary mapping to AI_800G (800G/1.6T網路),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+4979,AI_NETWORK,0.75,inherited from AI_800G,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+4979,AI_INFRA,0.75,inherited from AI_800G,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2345,AI_CPO,0.7,primary mapping to AI_CPO (CPO),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+4977,AI_CPO,0.7,primary mapping to AI_CPO (CPO),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3081,AI_CPO,0.7,primary mapping to AI_CPO (CPO),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3363,AI_CPO,0.7,primary mapping to AI_CPO (CPO),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3081,AI_SIPH,0.7,primary mapping to AI_SIPH (矽光子),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3363,AI_SIPH,0.7,primary mapping to AI_SIPH (矽光子),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+4977,AI_SIPH,0.7,primary mapping to AI_SIPH (矽光子),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6442,AI_SIPH,0.7,primary mapping to AI_SIPH (矽光子),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+4977,AI_OPTICAL,0.75,primary mapping to AI_OPTICAL (光通訊),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+4979,AI_OPTICAL,0.75,primary mapping to AI_OPTICAL (光通訊),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3363,AI_OPTICAL,0.75,primary mapping to AI_OPTICAL (光通訊),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3081,AI_OPTICAL,0.75,primary mapping to AI_OPTICAL (光通訊),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6442,AI_OPTICAL,0.75,primary mapping to AI_OPTICAL (光通訊),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3362,AI_OPTICAL,0.75,primary mapping to AI_OPTICAL (光通訊),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3362,AI_NETWORK,0.75,inherited from AI_OPTICAL,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3362,AI_INFRA,0.75,inherited from AI_OPTICAL,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+4908,AI_OPTICAL,0.75,primary mapping to AI_OPTICAL (光通訊),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+4908,AI_NETWORK,0.75,inherited from AI_OPTICAL,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+4908,AI_INFRA,0.75,inherited from AI_OPTICAL,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+8210,AI_RACK,0.75,primary mapping to AI_RACK (機櫃與機構),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6117,AI_RACK,0.75,primary mapping to AI_RACK (機櫃與機構),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2059,AI_RACK,0.75,primary mapping to AI_RACK (機櫃與機構),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2059,AI_INFRA,0.75,inherited from AI_RACK,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3533,AI_RACK,0.75,primary mapping to AI_RACK (機櫃與機構),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3533,AI_INFRA,0.75,inherited from AI_RACK,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2392,AI_RACK,0.75,primary mapping to AI_RACK (機櫃與機構),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2324,NB,0.75,primary mapping to NB (筆電),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2324,COMPUTE,0.75,inherited from NB,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2353,NB,0.75,primary mapping to NB (筆電),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2353,COMPUTE,0.75,inherited from NB,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2356,NB,0.75,primary mapping to NB (筆電),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2356,COMPUTE,0.75,inherited from NB,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2382,NB,0.75,primary mapping to NB (筆電),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2382,COMPUTE,0.75,inherited from NB,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3231,NB,0.75,primary mapping to NB (筆電),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3231,COMPUTE,0.75,inherited from NB,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2357,NB,0.75,primary mapping to NB (筆電),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2357,COMPUTE,0.75,inherited from NB,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2376,NB,0.75,primary mapping to NB (筆電),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2376,COMPUTE,0.75,inherited from NB,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2377,NB,0.75,primary mapping to NB (筆電),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2377,COMPUTE,0.75,inherited from NB,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2357,AI_PC,0.75,primary mapping to AI_PC (AI PC),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2376,AI_PC,0.75,primary mapping to AI_PC (AI PC),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2377,AI_PC,0.75,primary mapping to AI_PC (AI PC),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2353,AI_PC,0.75,primary mapping to AI_PC (AI PC),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2324,AI_PC,0.75,primary mapping to AI_PC (AI PC),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2454,AI_PC,0.75,primary mapping to AI_PC (AI PC),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2454,COMPUTE,0.75,inherited from AI_PC,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+8299,AI_PC,0.75,primary mapping to AI_PC (AI PC),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+8299,COMPUTE,0.75,inherited from AI_PC,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2357,MOTHERBOARD,0.75,primary mapping to MOTHERBOARD (主機板),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2376,MOTHERBOARD,0.75,primary mapping to MOTHERBOARD (主機板),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2377,MOTHERBOARD,0.75,primary mapping to MOTHERBOARD (主機板),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2397,MOTHERBOARD,0.75,primary mapping to MOTHERBOARD (主機板),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2397,COMPUTE,0.75,inherited from MOTHERBOARD,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3515,MOTHERBOARD,0.75,primary mapping to MOTHERBOARD (主機板),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3515,COMPUTE,0.75,inherited from MOTHERBOARD,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2376,GPU_ADDIN,0.75,primary mapping to GPU_ADDIN (顯示卡/GPU卡),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2377,GPU_ADDIN,0.75,primary mapping to GPU_ADDIN (顯示卡/GPU卡),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2357,GPU_ADDIN,0.75,primary mapping to GPU_ADDIN (顯示卡/GPU卡),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2465,GPU_ADDIN,0.75,primary mapping to GPU_ADDIN (顯示卡/GPU卡),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2465,COMPUTE,0.75,inherited from GPU_ADDIN,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2395,IPC,0.75,primary mapping to IPC (工業電腦),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2395,COMPUTE,0.75,inherited from IPC,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+6414,IPC,0.75,primary mapping to IPC (工業電腦),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6414,COMPUTE,0.75,inherited from IPC,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3706,IPC,0.75,primary mapping to IPC (工業電腦),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3706,COMPUTE,0.75,inherited from IPC,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+6235,IPC,0.75,primary mapping to IPC (工業電腦),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6235,COMPUTE,0.75,inherited from IPC,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+8050,IPC,0.75,primary mapping to IPC (工業電腦),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+8050,COMPUTE,0.75,inherited from IPC,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2327,PASSIVE,0.75,primary mapping to PASSIVE (被動元件),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2327,ELEC,0.75,inherited from PASSIVE,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2492,PASSIVE,0.75,primary mapping to PASSIVE (被動元件),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2492,ELEC,0.75,inherited from PASSIVE,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2456,PASSIVE,0.75,primary mapping to PASSIVE (被動元件),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2456,ELEC,0.75,inherited from PASSIVE,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3090,PASSIVE,0.75,primary mapping to PASSIVE (被動元件),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3090,ELEC,0.75,inherited from PASSIVE,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+6173,PASSIVE,0.75,primary mapping to PASSIVE (被動元件),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6173,ELEC,0.75,inherited from PASSIVE,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+6284,PASSIVE,0.75,primary mapping to PASSIVE (被動元件),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6284,ELEC,0.75,inherited from PASSIVE,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2327,MLCC,0.75,primary mapping to MLCC (MLCC),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2492,MLCC,0.75,primary mapping to MLCC (MLCC),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6173,MLCC,0.75,primary mapping to MLCC (MLCC),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6284,MLCC,0.75,primary mapping to MLCC (MLCC),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2456,INDUCTOR,0.75,primary mapping to INDUCTOR (電感),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3090,INDUCTOR,0.75,primary mapping to INDUCTOR (電感),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3376,INDUCTOR,0.75,primary mapping to INDUCTOR (電感),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3376,PASSIVE,0.75,inherited from INDUCTOR,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3376,ELEC,0.75,inherited from INDUCTOR,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+6284,INDUCTOR,0.75,primary mapping to INDUCTOR (電感),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2392,CONNECTOR,0.75,primary mapping to CONNECTOR (連接器),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2392,ELEC,0.75,inherited from CONNECTOR,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3533,CONNECTOR,0.75,primary mapping to CONNECTOR (連接器),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3533,ELEC,0.75,inherited from CONNECTOR,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2059,CONNECTOR,0.75,primary mapping to CONNECTOR (連接器),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2059,ELEC,0.75,inherited from CONNECTOR,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3044,CONNECTOR,0.75,primary mapping to CONNECTOR (連接器),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3044,ELEC,0.75,inherited from CONNECTOR,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3665,CONNECTOR,0.75,primary mapping to CONNECTOR (連接器),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3665,ELEC,0.75,inherited from CONNECTOR,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+6274,CONNECTOR,0.75,primary mapping to CONNECTOR (連接器),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6274,ELEC,0.75,inherited from CONNECTOR,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3037,PCB,0.75,primary mapping to PCB (PCB),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3037,ELEC,0.75,inherited from PCB,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2313,PCB,0.75,primary mapping to PCB (PCB),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2313,ELEC,0.75,inherited from PCB,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2368,PCB,0.75,primary mapping to PCB (PCB),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2368,ELEC,0.75,inherited from PCB,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+4958,PCB,0.75,primary mapping to PCB (PCB),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+4958,ELEC,0.75,inherited from PCB,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3044,PCB,0.75,primary mapping to PCB (PCB),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6278,PCB,0.75,primary mapping to PCB (PCB),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6278,ELEC,0.75,inherited from PCB,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2355,PCB,0.75,primary mapping to PCB (PCB),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2355,ELEC,0.75,inherited from PCB,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+8213,PCB,0.75,primary mapping to PCB (PCB),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+8213,ELEC,0.75,inherited from PCB,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2383,CCL,0.75,primary mapping to CCL (CCL銅箔基板),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2383,PCB,0.75,inherited from CCL,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2383,ELEC,0.75,inherited from CCL,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+6213,CCL,0.75,primary mapping to CCL (CCL銅箔基板),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6213,PCB,0.75,inherited from CCL,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+6213,ELEC,0.75,inherited from CCL,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+6274,CCL,0.75,primary mapping to CCL (CCL銅箔基板),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6274,PCB,0.75,inherited from CCL,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+8358,CCL,0.75,primary mapping to CCL (CCL銅箔基板),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+8358,PCB,0.75,inherited from CCL,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+8358,ELEC,0.75,inherited from CCL,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+4958,FPCB,0.75,primary mapping to FPCB (軟板),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6269,FPCB,0.75,primary mapping to FPCB (軟板),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6269,PCB,0.75,inherited from FPCB,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+6269,ELEC,0.75,inherited from FPCB,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+8046,FPCB,0.75,primary mapping to FPCB (軟板),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+8046,PCB,0.75,inherited from FPCB,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+8046,ELEC,0.75,inherited from FPCB,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+6213,FPCB,0.75,primary mapping to FPCB (軟板),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6415,PMIC,0.75,primary mapping to PMIC (電源管理),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6415,ELEC,0.75,inherited from PMIC,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2454,PMIC,0.75,primary mapping to PMIC (電源管理),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2454,ELEC,0.75,inherited from PMIC,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+8081,PMIC,0.75,primary mapping to PMIC (電源管理),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+8081,ELEC,0.75,inherited from PMIC,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3227,PMIC,0.75,primary mapping to PMIC (電源管理),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3227,ELEC,0.75,inherited from PMIC,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3558,PMIC,0.75,primary mapping to PMIC (電源管理),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3558,ELEC,0.75,inherited from PMIC,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2324,BATTERY,0.75,primary mapping to BATTERY (電池),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2324,ELEC,0.75,inherited from BATTERY,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2409,BATTERY,0.75,primary mapping to BATTERY (電池),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2409,ELEC,0.75,inherited from BATTERY,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+6441,BATTERY,0.75,primary mapping to BATTERY (電池),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6441,ELEC,0.75,inherited from BATTERY,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1514,BATTERY,0.75,primary mapping to BATTERY (電池),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1514,ELEC,0.75,inherited from BATTERY,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+5225,BATTERY,0.75,primary mapping to BATTERY (電池),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+5225,ELEC,0.75,inherited from BATTERY,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+8299,BATTERY,0.75,primary mapping to BATTERY (電池),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+8299,ELEC,0.75,inherited from BATTERY,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2393,LED,0.75,primary mapping to LED (LED),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2393,ELEC,0.75,inherited from LED,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3031,LED,0.75,primary mapping to LED (LED),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3031,ELEC,0.75,inherited from LED,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+4956,LED,0.75,primary mapping to LED (LED),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+4956,ELEC,0.75,inherited from LED,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+6288,LED,0.75,primary mapping to LED (LED),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6288,ELEC,0.75,inherited from LED,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3698,LED,0.75,primary mapping to LED (LED),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3698,ELEC,0.75,inherited from LED,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2317,EMS,0.75,primary mapping to EMS (電子代工EMS),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2317,ELEC,0.75,inherited from EMS,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2354,EMS,0.75,primary mapping to EMS (電子代工EMS),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2354,ELEC,0.75,inherited from EMS,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+4938,EMS,0.75,primary mapping to EMS (電子代工EMS),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+4938,ELEC,0.75,inherited from EMS,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2324,EMS,0.75,primary mapping to EMS (電子代工EMS),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2356,EMS,0.75,primary mapping to EMS (電子代工EMS),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2356,ELEC,0.75,inherited from EMS,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3231,EMS,0.75,primary mapping to EMS (電子代工EMS),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3231,ELEC,0.75,inherited from EMS,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2382,EMS,0.75,primary mapping to EMS (電子代工EMS),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2382,ELEC,0.75,inherited from EMS,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2409,PANEL,0.75,primary mapping to PANEL (面板),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2409,DISPLAY,0.75,inherited from PANEL,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3481,PANEL,0.75,primary mapping to PANEL (面板),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3481,DISPLAY,0.75,inherited from PANEL,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+6116,PANEL,0.75,primary mapping to PANEL (面板),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6116,DISPLAY,0.75,inherited from PANEL,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+6176,PANEL,0.75,primary mapping to PANEL (面板),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6176,DISPLAY,0.75,inherited from PANEL,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3034,DDIC,0.75,primary mapping to DDIC (驅動IC),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3034,DISPLAY,0.75,inherited from DDIC,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3515,DDIC,0.75,primary mapping to DDIC (驅動IC),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3515,DISPLAY,0.75,inherited from DDIC,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+4961,DDIC,0.75,primary mapping to DDIC (驅動IC),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+4961,DISPLAY,0.75,inherited from DDIC,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+8016,DDIC,0.75,primary mapping to DDIC (驅動IC),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+8016,DISPLAY,0.75,inherited from DDIC,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2401,DDIC,0.75,primary mapping to DDIC (驅動IC),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2401,DISPLAY,0.75,inherited from DDIC,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3008,OPTICS,0.75,primary mapping to OPTICS (光學鏡頭),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3008,DISPLAY,0.75,inherited from OPTICS,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3406,OPTICS,0.75,primary mapping to OPTICS (光學鏡頭),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3406,DISPLAY,0.75,inherited from OPTICS,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3535,OPTICS,0.75,primary mapping to OPTICS (光學鏡頭),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3535,DISPLAY,0.75,inherited from OPTICS,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3362,OPTICS,0.75,primary mapping to OPTICS (光學鏡頭),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3362,DISPLAY,0.75,inherited from OPTICS,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3363,OPTICS,0.75,primary mapping to OPTICS (光學鏡頭),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3363,DISPLAY,0.75,inherited from OPTICS,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+4960,POLARIZER,0.7,primary mapping to POLARIZER (偏光板),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+4960,DISPLAY,0.7,inherited from POLARIZER,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1342,POLARIZER,0.7,primary mapping to POLARIZER (偏光板),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1342,DISPLAY,0.7,inherited from POLARIZER,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1909,POLARIZER,0.7,primary mapping to POLARIZER (偏光板),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1909,DISPLAY,0.7,inherited from POLARIZER,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2379,WIFI,0.75,primary mapping to WIFI (Wi-Fi/網通IC),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2379,COMM,0.75,inherited from WIFI,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2345,WIFI,0.75,primary mapping to WIFI (Wi-Fi/網通IC),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2345,COMM,0.75,inherited from WIFI,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3596,WIFI,0.75,primary mapping to WIFI (Wi-Fi/網通IC),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3596,COMM,0.75,inherited from WIFI,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+5388,WIFI,0.75,primary mapping to WIFI (Wi-Fi/網通IC),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+5388,COMM,0.75,inherited from WIFI,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3704,WIFI,0.75,primary mapping to WIFI (Wi-Fi/網通IC),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3704,COMM,0.75,inherited from WIFI,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+4968,WIFI,0.75,primary mapping to WIFI (Wi-Fi/網通IC),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+4968,COMM,0.75,inherited from WIFI,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2345,5G,0.75,primary mapping to 5G (5G與基地台),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2412,5G,0.75,primary mapping to 5G (5G與基地台),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2412,COMM,0.75,inherited from 5G,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3045,5G,0.75,primary mapping to 5G (5G與基地台),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3045,COMM,0.75,inherited from 5G,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+4904,5G,0.75,primary mapping to 5G (5G與基地台),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+4904,COMM,0.75,inherited from 5G,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+5388,5G,0.75,primary mapping to 5G (5G與基地台),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3596,CPE,0.75,primary mapping to CPE (網通終端),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3380,CPE,0.75,primary mapping to CPE (網通終端),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3380,COMM,0.75,inherited from CPE,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+5388,CPE,0.75,primary mapping to CPE (網通終端),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3704,CPE,0.75,primary mapping to CPE (網通終端),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2419,CPE,0.75,primary mapping to CPE (網通終端),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2419,COMM,0.75,inherited from CPE,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+6285,CPE,0.75,primary mapping to CPE (網通終端),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6285,COMM,0.75,inherited from CPE,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3665,CABLE,0.75,primary mapping to CABLE (電纜與高速線),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3665,COMM,0.75,inherited from CABLE,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2059,CABLE,0.75,primary mapping to CABLE (電纜與高速線),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2059,COMM,0.75,inherited from CABLE,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1605,CABLE,0.75,primary mapping to CABLE (電纜與高速線),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1605,COMM,0.75,inherited from CABLE,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1612,CABLE,0.75,primary mapping to CABLE (電纜與高速線),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1612,COMM,0.75,inherited from CABLE,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+6285,CABLE,0.75,primary mapping to CABLE (電纜與高速線),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2207,EV,0.75,primary mapping to EV (電動車),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2207,AUTO,0.75,inherited from EV,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2201,EV,0.75,primary mapping to EV (電動車),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2201,AUTO,0.75,inherited from EV,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2204,EV,0.75,primary mapping to EV (電動車),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2204,AUTO,0.75,inherited from EV,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1319,EV,0.75,primary mapping to EV (電動車),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1319,AUTO,0.75,inherited from EV,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1338,EV,0.75,primary mapping to EV (電動車),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1338,AUTO,0.75,inherited from EV,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1512,EV,0.75,primary mapping to EV (電動車),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1512,AUTO,0.75,inherited from EV,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2231,EV,0.75,primary mapping to EV (電動車),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2231,AUTO,0.75,inherited from EV,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+4551,EV,0.75,primary mapping to EV (電動車),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+4551,AUTO,0.75,inherited from EV,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3665,EV,0.75,primary mapping to EV (電動車),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3665,AUTO,0.75,inherited from EV,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1513,CHARGING,0.75,primary mapping to CHARGING (充電樁),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1513,AUTO,0.75,inherited from CHARGING,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1519,CHARGING,0.75,primary mapping to CHARGING (充電樁),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1519,AUTO,0.75,inherited from CHARGING,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2308,CHARGING,0.75,primary mapping to CHARGING (充電樁),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2308,AUTO,0.75,inherited from CHARGING,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1612,CHARGING,0.75,primary mapping to CHARGING (充電樁),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1612,AUTO,0.75,inherited from CHARGING,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+6409,CHARGING,0.75,primary mapping to CHARGING (充電樁),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6409,AUTO,0.75,inherited from CHARGING,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2231,ADAS,0.75,primary mapping to ADAS (ADAS與車用電子),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2454,ADAS,0.75,primary mapping to ADAS (ADAS與車用電子),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2454,AUTO,0.75,inherited from ADAS,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2379,ADAS,0.75,primary mapping to ADAS (ADAS與車用電子),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2379,AUTO,0.75,inherited from ADAS,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3665,ADAS,0.75,primary mapping to ADAS (ADAS與車用電子),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+4551,ADAS,0.75,primary mapping to ADAS (ADAS與車用電子),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2395,ADAS,0.75,primary mapping to ADAS (ADAS與車用電子),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2395,AUTO,0.75,inherited from ADAS,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1319,AUTO_PARTS,0.75,primary mapping to AUTO_PARTS (汽車零組件),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1522,AUTO_PARTS,0.75,primary mapping to AUTO_PARTS (汽車零組件),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1522,AUTO,0.75,inherited from AUTO_PARTS,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1525,AUTO_PARTS,0.75,primary mapping to AUTO_PARTS (汽車零組件),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1525,AUTO,0.75,inherited from AUTO_PARTS,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1338,AUTO_PARTS,0.75,primary mapping to AUTO_PARTS (汽車零組件),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1536,AUTO_PARTS,0.75,primary mapping to AUTO_PARTS (汽車零組件),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1536,AUTO,0.75,inherited from AUTO_PARTS,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2233,AUTO_PARTS,0.75,primary mapping to AUTO_PARTS (汽車零組件),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2233,AUTO,0.75,inherited from AUTO_PARTS,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1512,AUTO_PARTS,0.75,primary mapping to AUTO_PARTS (汽車零組件),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2105,TIRE,0.75,primary mapping to TIRE (輪胎),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2105,AUTO,0.75,inherited from TIRE,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2106,TIRE,0.75,primary mapping to TIRE (輪胎),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2106,AUTO,0.75,inherited from TIRE,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2104,TIRE,0.75,primary mapping to TIRE (輪胎),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2104,AUTO,0.75,inherited from TIRE,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+5102,TIRE,0.75,primary mapping to TIRE (輪胎),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+5102,AUTO,0.75,inherited from TIRE,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+6244,SOLAR,0.75,primary mapping to SOLAR (太陽能),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6244,ENERGY,0.75,inherited from SOLAR,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3576,SOLAR,0.75,primary mapping to SOLAR (太陽能),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3576,ENERGY,0.75,inherited from SOLAR,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+6443,SOLAR,0.75,primary mapping to SOLAR (太陽能),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6443,ENERGY,0.75,inherited from SOLAR,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+4934,SOLAR,0.75,primary mapping to SOLAR (太陽能),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+4934,ENERGY,0.75,inherited from SOLAR,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3686,SOLAR,0.75,primary mapping to SOLAR (太陽能),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3686,ENERGY,0.75,inherited from SOLAR,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2409,SOLAR,0.75,primary mapping to SOLAR (太陽能),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2409,ENERGY,0.75,inherited from SOLAR,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1513,WIND,0.75,primary mapping to WIND (風力發電),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1513,ENERGY,0.75,inherited from WIND,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1519,WIND,0.75,primary mapping to WIND (風力發電),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1519,ENERGY,0.75,inherited from WIND,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2208,WIND,0.75,primary mapping to WIND (風力發電),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2208,ENERGY,0.75,inherited from WIND,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2239,WIND,0.75,primary mapping to WIND (風力發電),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2239,ENERGY,0.75,inherited from WIND,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+9933,WIND,0.75,primary mapping to WIND (風力發電),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+9933,ENERGY,0.75,inherited from WIND,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2308,STORAGE,0.75,primary mapping to STORAGE (儲能),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2308,ENERGY,0.75,inherited from STORAGE,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1513,STORAGE,0.75,primary mapping to STORAGE (儲能),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1519,STORAGE,0.75,primary mapping to STORAGE (儲能),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6409,STORAGE,0.75,primary mapping to STORAGE (儲能),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6409,ENERGY,0.75,inherited from STORAGE,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+5225,STORAGE,0.75,primary mapping to STORAGE (儲能),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+5225,ENERGY,0.75,inherited from STORAGE,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1605,STORAGE,0.75,primary mapping to STORAGE (儲能),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1605,ENERGY,0.75,inherited from STORAGE,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1513,SMART_GRID,0.75,primary mapping to SMART_GRID (智慧電網),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1519,SMART_GRID,0.75,primary mapping to SMART_GRID (智慧電網),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2308,SMART_GRID,0.75,primary mapping to SMART_GRID (智慧電網),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1605,SMART_GRID,0.75,primary mapping to SMART_GRID (智慧電網),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1612,SMART_GRID,0.75,primary mapping to SMART_GRID (智慧電網),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1612,ENERGY,0.75,inherited from SMART_GRID,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1504,SMART_GRID,0.75,primary mapping to SMART_GRID (智慧電網),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1504,ENERGY,0.75,inherited from SMART_GRID,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2308,INVERTER,0.75,primary mapping to INVERTER (變流器/電能轉換),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1513,INVERTER,0.75,primary mapping to INVERTER (變流器/電能轉換),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6409,INVERTER,0.75,primary mapping to INVERTER (變流器/電能轉換),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6869,INVERTER,0.75,primary mapping to INVERTER (變流器/電能轉換),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6869,ENERGY,0.75,inherited from INVERTER,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2002,STEEL,0.75,primary mapping to STEEL (鋼鐵),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2002,MATERIALS,0.75,inherited from STEEL,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2006,STEEL,0.75,primary mapping to STEEL (鋼鐵),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2006,MATERIALS,0.75,inherited from STEEL,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2014,STEEL,0.75,primary mapping to STEEL (鋼鐵),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2014,MATERIALS,0.75,inherited from STEEL,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2027,STEEL,0.75,primary mapping to STEEL (鋼鐵),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2027,MATERIALS,0.75,inherited from STEEL,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2023,STEEL,0.75,primary mapping to STEEL (鋼鐵),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2023,MATERIALS,0.75,inherited from STEEL,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2031,STEEL,0.75,primary mapping to STEEL (鋼鐵),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2031,MATERIALS,0.75,inherited from STEEL,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2010,STEEL,0.75,primary mapping to STEEL (鋼鐵),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2010,MATERIALS,0.75,inherited from STEEL,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2034,STEEL,0.75,primary mapping to STEEL (鋼鐵),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2034,MATERIALS,0.75,inherited from STEEL,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2028,STEEL,0.75,primary mapping to STEEL (鋼鐵),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2028,MATERIALS,0.75,inherited from STEEL,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1301,PETROCHEM,0.75,primary mapping to PETROCHEM (石化),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1301,MATERIALS,0.75,inherited from PETROCHEM,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1303,PETROCHEM,0.75,primary mapping to PETROCHEM (石化),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1303,MATERIALS,0.75,inherited from PETROCHEM,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1326,PETROCHEM,0.75,primary mapping to PETROCHEM (石化),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1326,MATERIALS,0.75,inherited from PETROCHEM,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+6505,PETROCHEM,0.75,primary mapping to PETROCHEM (石化),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6505,MATERIALS,0.75,inherited from PETROCHEM,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1314,PETROCHEM,0.75,primary mapping to PETROCHEM (石化),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1314,MATERIALS,0.75,inherited from PETROCHEM,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1717,PETROCHEM,0.75,primary mapping to PETROCHEM (石化),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1717,MATERIALS,0.75,inherited from PETROCHEM,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1304,PETROCHEM,0.75,primary mapping to PETROCHEM (石化),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1304,MATERIALS,0.75,inherited from PETROCHEM,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1305,PETROCHEM,0.75,primary mapping to PETROCHEM (石化),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1305,MATERIALS,0.75,inherited from PETROCHEM,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1308,PETROCHEM,0.75,primary mapping to PETROCHEM (石化),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1308,MATERIALS,0.75,inherited from PETROCHEM,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1312,PETROCHEM,0.75,primary mapping to PETROCHEM (石化),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1312,MATERIALS,0.75,inherited from PETROCHEM,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1313,PETROCHEM,0.75,primary mapping to PETROCHEM (石化),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1313,MATERIALS,0.75,inherited from PETROCHEM,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1101,CEMENT,0.75,primary mapping to CEMENT (水泥),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1101,MATERIALS,0.75,inherited from CEMENT,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1102,CEMENT,0.75,primary mapping to CEMENT (水泥),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1102,MATERIALS,0.75,inherited from CEMENT,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1104,CEMENT,0.75,primary mapping to CEMENT (水泥),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1104,MATERIALS,0.75,inherited from CEMENT,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1108,CEMENT,0.75,primary mapping to CEMENT (水泥),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1108,MATERIALS,0.75,inherited from CEMENT,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1109,CEMENT,0.75,primary mapping to CEMENT (水泥),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1109,MATERIALS,0.75,inherited from CEMENT,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1110,CEMENT,0.75,primary mapping to CEMENT (水泥),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1110,MATERIALS,0.75,inherited from CEMENT,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1301,PLASTIC,0.75,primary mapping to PLASTIC (塑膠),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1303,PLASTIC,0.75,primary mapping to PLASTIC (塑膠),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1326,PLASTIC,0.75,primary mapping to PLASTIC (塑膠),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1304,PLASTIC,0.75,primary mapping to PLASTIC (塑膠),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1308,PLASTIC,0.75,primary mapping to PLASTIC (塑膠),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1312,PLASTIC,0.75,primary mapping to PLASTIC (塑膠),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2108,PLASTIC,0.75,primary mapping to PLASTIC (塑膠),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2108,MATERIALS,0.75,inherited from PLASTIC,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1904,PAPER,0.75,primary mapping to PAPER (紙業),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1904,MATERIALS,0.75,inherited from PAPER,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1905,PAPER,0.75,primary mapping to PAPER (紙業),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1905,MATERIALS,0.75,inherited from PAPER,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1906,PAPER,0.75,primary mapping to PAPER (紙業),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1906,MATERIALS,0.75,inherited from PAPER,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1907,PAPER,0.75,primary mapping to PAPER (紙業),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1907,MATERIALS,0.75,inherited from PAPER,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1909,PAPER,0.75,primary mapping to PAPER (紙業),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1909,MATERIALS,0.75,inherited from PAPER,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1802,GLASS,0.75,primary mapping to GLASS (玻璃),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1802,MATERIALS,0.75,inherited from GLASS,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1817,GLASS,0.75,primary mapping to GLASS (玻璃),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1817,MATERIALS,0.75,inherited from GLASS,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3011,GLASS,0.75,primary mapping to GLASS (玻璃),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3011,MATERIALS,0.75,inherited from GLASS,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1402,TEXTILE,0.75,primary mapping to TEXTILE (紡織),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1402,MATERIALS,0.75,inherited from TEXTILE,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1414,TEXTILE,0.75,primary mapping to TEXTILE (紡織),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1414,MATERIALS,0.75,inherited from TEXTILE,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1464,TEXTILE,0.75,primary mapping to TEXTILE (紡織),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1464,MATERIALS,0.75,inherited from TEXTILE,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1476,TEXTILE,0.75,primary mapping to TEXTILE (紡織),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1476,MATERIALS,0.75,inherited from TEXTILE,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1477,TEXTILE,0.75,primary mapping to TEXTILE (紡織),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1477,MATERIALS,0.75,inherited from TEXTILE,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+4438,TEXTILE,0.75,primary mapping to TEXTILE (紡織),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+4438,MATERIALS,0.75,inherited from TEXTILE,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1504,MACHINERY,0.75,primary mapping to MACHINERY (機械),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1504,INDUSTRIAL,0.75,inherited from MACHINERY,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2049,MACHINERY,0.75,primary mapping to MACHINERY (機械),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2049,INDUSTRIAL,0.75,inherited from MACHINERY,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1536,MACHINERY,0.75,primary mapping to MACHINERY (機械),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1536,INDUSTRIAL,0.75,inherited from MACHINERY,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+4526,MACHINERY,0.75,primary mapping to MACHINERY (機械),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+4526,INDUSTRIAL,0.75,inherited from MACHINERY,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1560,MACHINERY,0.75,primary mapping to MACHINERY (機械),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1560,INDUSTRIAL,0.75,inherited from MACHINERY,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+4576,MACHINERY,0.75,primary mapping to MACHINERY (機械),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+4576,INDUSTRIAL,0.75,inherited from MACHINERY,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2049,AUTOMATION,0.75,primary mapping to AUTOMATION (自動化),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1590,AUTOMATION,0.75,primary mapping to AUTOMATION (自動化),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1590,INDUSTRIAL,0.75,inherited from AUTOMATION,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1597,AUTOMATION,0.75,primary mapping to AUTOMATION (自動化),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1597,INDUSTRIAL,0.75,inherited from AUTOMATION,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+4576,AUTOMATION,0.75,primary mapping to AUTOMATION (自動化),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2239,AUTOMATION,0.75,primary mapping to AUTOMATION (自動化),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2239,INDUSTRIAL,0.75,inherited from AUTOMATION,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1560,AUTOMATION,0.75,primary mapping to AUTOMATION (自動化),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2049,ROBOTICS,0.75,primary mapping to ROBOTICS (機器人),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1590,ROBOTICS,0.75,primary mapping to ROBOTICS (機器人),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1597,ROBOTICS,0.75,primary mapping to ROBOTICS (機器人),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+4576,ROBOTICS,0.75,primary mapping to ROBOTICS (機器人),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2239,ROBOTICS,0.75,primary mapping to ROBOTICS (機器人),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1560,ROBOTICS,0.75,primary mapping to ROBOTICS (機器人),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+4555,ROBOTICS,0.75,primary mapping to ROBOTICS (機器人),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+4555,INDUSTRIAL,0.75,inherited from ROBOTICS,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1560,TOOLING,0.75,primary mapping to TOOLING (工具與量測),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+4526,TOOLING,0.75,primary mapping to TOOLING (工具與量測),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+4533,TOOLING,0.75,primary mapping to TOOLING (工具與量測),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+4533,INDUSTRIAL,0.75,inherited from TOOLING,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2049,TOOLING,0.75,primary mapping to TOOLING (工具與量測),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2603,SHIPPING,0.75,primary mapping to SHIPPING (航運),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2603,TRANSPORT,0.75,inherited from SHIPPING,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2609,SHIPPING,0.75,primary mapping to SHIPPING (航運),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2609,TRANSPORT,0.75,inherited from SHIPPING,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2615,SHIPPING,0.75,primary mapping to SHIPPING (航運),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2615,TRANSPORT,0.75,inherited from SHIPPING,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2605,SHIPPING,0.75,primary mapping to SHIPPING (航運),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2605,TRANSPORT,0.75,inherited from SHIPPING,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2637,SHIPPING,0.75,primary mapping to SHIPPING (航運),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2637,TRANSPORT,0.75,inherited from SHIPPING,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2606,SHIPPING,0.75,primary mapping to SHIPPING (航運),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2606,TRANSPORT,0.75,inherited from SHIPPING,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2617,SHIPPING,0.75,primary mapping to SHIPPING (航運),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2617,TRANSPORT,0.75,inherited from SHIPPING,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2603,CONTAINER,0.75,primary mapping to CONTAINER (貨櫃航運),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2609,CONTAINER,0.75,primary mapping to CONTAINER (貨櫃航運),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2615,CONTAINER,0.75,primary mapping to CONTAINER (貨櫃航運),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2605,BULK,0.75,primary mapping to BULK (散裝航運),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2637,BULK,0.75,primary mapping to BULK (散裝航運),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2606,BULK,0.75,primary mapping to BULK (散裝航運),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2612,BULK,0.75,primary mapping to BULK (散裝航運),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2612,SHIPPING,0.75,inherited from BULK,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2612,TRANSPORT,0.75,inherited from BULK,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+5608,BULK,0.75,primary mapping to BULK (散裝航運),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+5608,SHIPPING,0.75,inherited from BULK,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+5608,TRANSPORT,0.75,inherited from BULK,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2618,AIRLINE,0.75,primary mapping to AIRLINE (航空),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2618,TRANSPORT,0.75,inherited from AIRLINE,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2610,AIRLINE,0.75,primary mapping to AIRLINE (航空),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2610,TRANSPORT,0.75,inherited from AIRLINE,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+6752,AIRLINE,0.75,primary mapping to AIRLINE (航空),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6752,TRANSPORT,0.75,inherited from AIRLINE,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2618,AIRPORT,0.7,primary mapping to AIRPORT (空港地勤),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2610,AIRPORT,0.7,primary mapping to AIRPORT (空港地勤),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2729,AIRPORT,0.7,primary mapping to AIRPORT (空港地勤),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2729,TRANSPORT,0.7,inherited from AIRPORT,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2618,LOGISTICS,0.75,primary mapping to LOGISTICS (物流),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+5607,LOGISTICS,0.75,primary mapping to LOGISTICS (物流),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+5607,TRANSPORT,0.75,inherited from LOGISTICS,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+5608,LOGISTICS,0.75,primary mapping to LOGISTICS (物流),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2606,LOGISTICS,0.75,primary mapping to LOGISTICS (物流),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2881,FHOLDING,0.75,primary mapping to FHOLDING (金控),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2881,FINANCIAL,0.75,inherited from FHOLDING,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2882,FHOLDING,0.75,primary mapping to FHOLDING (金控),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2882,FINANCIAL,0.75,inherited from FHOLDING,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2891,FHOLDING,0.75,primary mapping to FHOLDING (金控),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2891,FINANCIAL,0.75,inherited from FHOLDING,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2886,FHOLDING,0.75,primary mapping to FHOLDING (金控),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2886,FINANCIAL,0.75,inherited from FHOLDING,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2880,FHOLDING,0.75,primary mapping to FHOLDING (金控),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2880,FINANCIAL,0.75,inherited from FHOLDING,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2884,FHOLDING,0.75,primary mapping to FHOLDING (金控),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2884,FINANCIAL,0.75,inherited from FHOLDING,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2885,FHOLDING,0.75,primary mapping to FHOLDING (金控),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2885,FINANCIAL,0.75,inherited from FHOLDING,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2883,FHOLDING,0.75,primary mapping to FHOLDING (金控),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2883,FINANCIAL,0.75,inherited from FHOLDING,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2887,FHOLDING,0.75,primary mapping to FHOLDING (金控),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2887,FINANCIAL,0.75,inherited from FHOLDING,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2890,FHOLDING,0.75,primary mapping to FHOLDING (金控),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2890,FINANCIAL,0.75,inherited from FHOLDING,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2888,FHOLDING,0.75,primary mapping to FHOLDING (金控),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2888,FINANCIAL,0.75,inherited from FHOLDING,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2892,FHOLDING,0.75,primary mapping to FHOLDING (金控),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2892,FINANCIAL,0.75,inherited from FHOLDING,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+5880,FHOLDING,0.75,primary mapping to FHOLDING (金控),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+5880,FINANCIAL,0.75,inherited from FHOLDING,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2886,BANK,0.75,primary mapping to BANK (銀行),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2884,BANK,0.75,primary mapping to BANK (銀行),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2801,BANK,0.75,primary mapping to BANK (銀行),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2801,FINANCIAL,0.75,inherited from BANK,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2834,BANK,0.75,primary mapping to BANK (銀行),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2834,FINANCIAL,0.75,inherited from BANK,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2812,BANK,0.75,primary mapping to BANK (銀行),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2812,FINANCIAL,0.75,inherited from BANK,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+5876,BANK,0.75,primary mapping to BANK (銀行),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+5876,FINANCIAL,0.75,inherited from BANK,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2809,BANK,0.75,primary mapping to BANK (銀行),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2809,FINANCIAL,0.75,inherited from BANK,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2838,BANK,0.75,primary mapping to BANK (銀行),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2838,FINANCIAL,0.75,inherited from BANK,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2845,BANK,0.75,primary mapping to BANK (銀行),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2845,FINANCIAL,0.75,inherited from BANK,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2897,BANK,0.75,primary mapping to BANK (銀行),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2897,FINANCIAL,0.75,inherited from BANK,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2881,INSURANCE,0.75,primary mapping to INSURANCE (保險),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2882,INSURANCE,0.75,primary mapping to INSURANCE (保險),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2823,INSURANCE,0.75,primary mapping to INSURANCE (保險),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2823,FINANCIAL,0.75,inherited from INSURANCE,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2867,INSURANCE,0.75,primary mapping to INSURANCE (保險),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2867,FINANCIAL,0.75,inherited from INSURANCE,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2816,INSURANCE,0.75,primary mapping to INSURANCE (保險),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2816,FINANCIAL,0.75,inherited from INSURANCE,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2852,INSURANCE,0.75,primary mapping to INSURANCE (保險),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2852,FINANCIAL,0.75,inherited from INSURANCE,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2832,INSURANCE,0.75,primary mapping to INSURANCE (保險),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2832,FINANCIAL,0.75,inherited from INSURANCE,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2851,INSURANCE,0.75,primary mapping to INSURANCE (保險),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2851,FINANCIAL,0.75,inherited from INSURANCE,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+6005,SECURITIES,0.75,primary mapping to SECURITIES (證券),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6005,FINANCIAL,0.75,inherited from SECURITIES,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2855,SECURITIES,0.75,primary mapping to SECURITIES (證券),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2855,FINANCIAL,0.75,inherited from SECURITIES,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+6024,SECURITIES,0.75,primary mapping to SECURITIES (證券),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6024,FINANCIAL,0.75,inherited from SECURITIES,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2885,SECURITIES,0.75,primary mapping to SECURITIES (證券),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2856,SECURITIES,0.75,primary mapping to SECURITIES (證券),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2856,FINANCIAL,0.75,inherited from SECURITIES,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+6016,SECURITIES,0.75,primary mapping to SECURITIES (證券),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6016,FINANCIAL,0.75,inherited from SECURITIES,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+5871,LEASING,0.75,primary mapping to LEASING (租賃),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+5871,FINANCIAL,0.75,inherited from LEASING,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+9941,LEASING,0.75,primary mapping to LEASING (租賃),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+9941,FINANCIAL,0.75,inherited from LEASING,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2841,LEASING,0.75,primary mapping to LEASING (租賃),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2841,FINANCIAL,0.75,inherited from LEASING,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2515,CONSTRUCTION,0.75,primary mapping to CONSTRUCTION (營造),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2515,PROPERTY,0.75,inherited from CONSTRUCTION,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2535,CONSTRUCTION,0.75,primary mapping to CONSTRUCTION (營造),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2535,PROPERTY,0.75,inherited from CONSTRUCTION,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+9933,CONSTRUCTION,0.75,primary mapping to CONSTRUCTION (營造),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+9933,PROPERTY,0.75,inherited from CONSTRUCTION,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2511,CONSTRUCTION,0.75,primary mapping to CONSTRUCTION (營造),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2511,PROPERTY,0.75,inherited from CONSTRUCTION,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+5515,CONSTRUCTION,0.75,primary mapping to CONSTRUCTION (營造),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+5515,PROPERTY,0.75,inherited from CONSTRUCTION,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2542,DEVELOPER,0.75,primary mapping to DEVELOPER (建設),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2542,PROPERTY,0.75,inherited from DEVELOPER,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2520,DEVELOPER,0.75,primary mapping to DEVELOPER (建設),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2520,PROPERTY,0.75,inherited from DEVELOPER,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2548,DEVELOPER,0.75,primary mapping to DEVELOPER (建設),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2548,PROPERTY,0.75,inherited from DEVELOPER,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2504,DEVELOPER,0.75,primary mapping to DEVELOPER (建設),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2504,PROPERTY,0.75,inherited from DEVELOPER,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2597,DEVELOPER,0.75,primary mapping to DEVELOPER (建設),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2597,PROPERTY,0.75,inherited from DEVELOPER,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2547,DEVELOPER,0.75,primary mapping to DEVELOPER (建設),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2547,PROPERTY,0.75,inherited from DEVELOPER,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+5522,DEVELOPER,0.75,primary mapping to DEVELOPER (建設),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+5522,PROPERTY,0.75,inherited from DEVELOPER,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1101,BUILDING_MAT,0.75,primary mapping to BUILDING_MAT (建材),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1101,PROPERTY,0.75,inherited from BUILDING_MAT,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1102,BUILDING_MAT,0.75,primary mapping to BUILDING_MAT (建材),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1102,PROPERTY,0.75,inherited from BUILDING_MAT,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1802,BUILDING_MAT,0.75,primary mapping to BUILDING_MAT (建材),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1802,PROPERTY,0.75,inherited from BUILDING_MAT,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2515,BUILDING_MAT,0.75,primary mapping to BUILDING_MAT (建材),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+8463,BUILDING_MAT,0.75,primary mapping to BUILDING_MAT (建材),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+8463,PROPERTY,0.75,inherited from BUILDING_MAT,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1216,FOOD,0.75,primary mapping to FOOD (食品),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1216,CONSUMER,0.75,inherited from FOOD,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1201,FOOD,0.75,primary mapping to FOOD (食品),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1201,CONSUMER,0.75,inherited from FOOD,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1215,FOOD,0.75,primary mapping to FOOD (食品),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1215,CONSUMER,0.75,inherited from FOOD,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1227,FOOD,0.75,primary mapping to FOOD (食品),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1227,CONSUMER,0.75,inherited from FOOD,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1232,FOOD,0.75,primary mapping to FOOD (食品),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1232,CONSUMER,0.75,inherited from FOOD,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1229,FOOD,0.75,primary mapping to FOOD (食品),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1229,CONSUMER,0.75,inherited from FOOD,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1231,FOOD,0.75,primary mapping to FOOD (食品),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1231,CONSUMER,0.75,inherited from FOOD,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2912,RETAIL,0.75,primary mapping to RETAIL (通路零售),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2912,CONSUMER,0.75,inherited from RETAIL,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+5904,RETAIL,0.75,primary mapping to RETAIL (通路零售),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+5904,CONSUMER,0.75,inherited from RETAIL,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+5903,RETAIL,0.75,primary mapping to RETAIL (通路零售),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+5903,CONSUMER,0.75,inherited from RETAIL,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2910,RETAIL,0.75,primary mapping to RETAIL (通路零售),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2910,CONSUMER,0.75,inherited from RETAIL,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2926,RETAIL,0.75,primary mapping to RETAIL (通路零售),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2926,CONSUMER,0.75,inherited from RETAIL,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+8454,RETAIL,0.75,primary mapping to RETAIL (通路零售),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+8454,CONSUMER,0.75,inherited from RETAIL,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+9910,FOOTWEAR,0.75,primary mapping to FOOTWEAR (鞋類與運動),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+9910,CONSUMER,0.75,inherited from FOOTWEAR,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+9802,FOOTWEAR,0.75,primary mapping to FOOTWEAR (鞋類與運動),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+9802,CONSUMER,0.75,inherited from FOOTWEAR,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+9904,FOOTWEAR,0.75,primary mapping to FOOTWEAR (鞋類與運動),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+9904,CONSUMER,0.75,inherited from FOOTWEAR,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1476,FOOTWEAR,0.75,primary mapping to FOOTWEAR (鞋類與運動),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1476,CONSUMER,0.75,inherited from FOOTWEAR,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+9917,FOOTWEAR,0.75,primary mapping to FOOTWEAR (鞋類與運動),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+9917,CONSUMER,0.75,inherited from FOOTWEAR,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+9914,BICYCLE,0.75,primary mapping to BICYCLE (自行車),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+9914,CONSUMER,0.75,inherited from BICYCLE,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+9921,BICYCLE,0.75,primary mapping to BICYCLE (自行車),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+9921,CONSUMER,0.75,inherited from BICYCLE,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1591,BICYCLE,0.75,primary mapping to BICYCLE (自行車),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1591,CONSUMER,0.75,inherited from BICYCLE,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1515,BICYCLE,0.75,primary mapping to BICYCLE (自行車),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1515,CONSUMER,0.75,inherited from BICYCLE,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2707,TOURISM,0.75,primary mapping to TOURISM (觀光餐旅),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2707,CONSUMER,0.75,inherited from TOURISM,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2727,TOURISM,0.75,primary mapping to TOURISM (觀光餐旅),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2727,CONSUMER,0.75,inherited from TOURISM,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2722,TOURISM,0.75,primary mapping to TOURISM (觀光餐旅),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2722,CONSUMER,0.75,inherited from TOURISM,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2731,TOURISM,0.75,primary mapping to TOURISM (觀光餐旅),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2731,CONSUMER,0.75,inherited from TOURISM,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+5706,TOURISM,0.75,primary mapping to TOURISM (觀光餐旅),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+5706,CONSUMER,0.75,inherited from TOURISM,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+4743,BIOPHARMA,0.75,primary mapping to BIOPHARMA (製藥生技),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+4743,HEALTH,0.75,inherited from BIOPHARMA,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+6547,BIOPHARMA,0.75,primary mapping to BIOPHARMA (製藥生技),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6547,HEALTH,0.75,inherited from BIOPHARMA,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+4119,BIOPHARMA,0.75,primary mapping to BIOPHARMA (製藥生技),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+4119,HEALTH,0.75,inherited from BIOPHARMA,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1762,BIOPHARMA,0.75,primary mapping to BIOPHARMA (製藥生技),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1762,HEALTH,0.75,inherited from BIOPHARMA,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+4142,BIOPHARMA,0.75,primary mapping to BIOPHARMA (製藥生技),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+4142,HEALTH,0.75,inherited from BIOPHARMA,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3164,BIOPHARMA,0.75,primary mapping to BIOPHARMA (製藥生技),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3164,HEALTH,0.75,inherited from BIOPHARMA,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1707,CDMO,0.75,primary mapping to CDMO (CDMO),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1707,HEALTH,0.75,inherited from CDMO,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1795,CDMO,0.75,primary mapping to CDMO (CDMO),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1795,HEALTH,0.75,inherited from CDMO,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+6541,CDMO,0.75,primary mapping to CDMO (CDMO),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+6541,HEALTH,0.75,inherited from CDMO,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+4743,CDMO,0.75,primary mapping to CDMO (CDMO),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+4105,DEVICE,0.75,primary mapping to DEVICE (醫材),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+4105,HEALTH,0.75,inherited from DEVICE,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1783,DEVICE,0.75,primary mapping to DEVICE (醫材),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1783,HEALTH,0.75,inherited from DEVICE,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+4106,DEVICE,0.75,primary mapping to DEVICE (醫材),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+4106,HEALTH,0.75,inherited from DEVICE,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+4162,DEVICE,0.75,primary mapping to DEVICE (醫材),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+4162,HEALTH,0.75,inherited from DEVICE,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+4128,DEVICE,0.75,primary mapping to DEVICE (醫材),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+4128,HEALTH,0.75,inherited from DEVICE,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+9907,HOSPITAL,0.7,primary mapping to HOSPITAL (醫院),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+9907,HEALTH,0.7,inherited from HOSPITAL,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+4128,HOSPITAL,0.7,primary mapping to HOSPITAL (醫院),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+4137,HOSPITAL,0.7,primary mapping to HOSPITAL (醫院),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+4137,HEALTH,0.7,inherited from HOSPITAL,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2634,DRONE,0.7,primary mapping to DRONE (無人機),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2634,EMERGING,0.7,inherited from DRONE,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+4572,DRONE,0.7,primary mapping to DRONE (無人機),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+4572,EMERGING,0.7,inherited from DRONE,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+8032,DRONE,0.7,primary mapping to DRONE (無人機),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+8032,EMERGING,0.7,inherited from DRONE,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2239,DRONE,0.7,primary mapping to DRONE (無人機),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2239,EMERGING,0.7,inherited from DRONE,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2634,DEFENSE,0.75,primary mapping to DEFENSE (國防),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2208,DEFENSE,0.75,primary mapping to DEFENSE (國防),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2208,EMERGING,0.75,inherited from DEFENSE,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1513,DEFENSE,0.75,primary mapping to DEFENSE (國防),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1513,EMERGING,0.75,inherited from DEFENSE,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1519,DEFENSE,0.75,primary mapping to DEFENSE (國防),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1519,EMERGING,0.75,inherited from DEFENSE,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2414,DEFENSE,0.75,primary mapping to DEFENSE (國防),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2414,EMERGING,0.75,inherited from DEFENSE,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+8032,DEFENSE,0.75,primary mapping to DEFENSE (國防),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+9412,SATELLITE,0.7,primary mapping to SATELLITE (衛星),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+9412,EMERGING,0.7,inherited from SATELLITE,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3062,SATELLITE,0.7,primary mapping to SATELLITE (衛星),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3062,EMERGING,0.7,inherited from SATELLITE,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+5388,SATELLITE,0.7,primary mapping to SATELLITE (衛星),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+5388,EMERGING,0.7,inherited from SATELLITE,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+4977,SATELLITE,0.7,primary mapping to SATELLITE (衛星),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+4977,EMERGING,0.7,inherited from SATELLITE,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1513,HYDROGEN,0.7,primary mapping to HYDROGEN (氫能),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1605,HYDROGEN,0.7,primary mapping to HYDROGEN (氫能),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1605,EMERGING,0.7,inherited from HYDROGEN,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+1723,HYDROGEN,0.7,primary mapping to HYDROGEN (氫能),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+1723,EMERGING,0.7,inherited from HYDROGEN,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2208,HYDROGEN,0.7,primary mapping to HYDROGEN (氫能),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3702,IC_DIST,0.75,primary mapping to IC_DIST (IC通路),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3702,TECH_CH,0.75,inherited from IC_DIST,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3036,IC_DIST,0.75,primary mapping to IC_DIST (IC通路),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3036,TECH_CH,0.75,inherited from IC_DIST,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2347,IC_DIST,0.75,primary mapping to IC_DIST (IC通路),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2347,TECH_CH,0.75,inherited from IC_DIST,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3312,IC_DIST,0.75,primary mapping to IC_DIST (IC通路),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3312,TECH_CH,0.75,inherited from IC_DIST,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+8112,IC_DIST,0.75,primary mapping to IC_DIST (IC通路),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+8112,TECH_CH,0.75,inherited from IC_DIST,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+5434,IC_DIST,0.75,primary mapping to IC_DIST (IC通路),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+5434,TECH_CH,0.75,inherited from IC_DIST,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2347,IT_DIST,0.75,primary mapping to IT_DIST (資訊通路),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2453,IT_DIST,0.75,primary mapping to IT_DIST (資訊通路),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2453,TECH_CH,0.75,inherited from IT_DIST,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+2414,IT_DIST,0.75,primary mapping to IT_DIST (資訊通路),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+2414,TECH_CH,0.75,inherited from IT_DIST,v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),True
+3702,IT_DIST,0.75,primary mapping to IT_DIST (資訊通路),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False
+3036,IT_DIST,0.75,primary mapping to IT_DIST (資訊通路),v2-tax-1 research mapping; company primary business lines (TWSE/TPEx listed common stocks),False

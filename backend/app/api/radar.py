@@ -51,6 +51,10 @@ def _sector_row(metric: SectorDailyMetric, theme_name: str | None, rank: float |
         flow_member_count=metric.flow_member_count,
         coverage_ratio=_f(metric.coverage_ratio),
         low_coverage=bool(metric.low_coverage),
+        thin_membership=bool(getattr(metric, "thin_membership", False)),
+        rank_excluded=bool(getattr(metric, "rank_excluded", False)),
+        mapping_version=getattr(metric, "mapping_version", None),
+        theme_level=None,
     )
 
 
@@ -200,7 +204,10 @@ def _sector_snapshot(
         select(SectorDailyMetric).where(SectorDailyMetric.trade_date == asof)
     ).scalars().all()
     if not include_low_coverage:
-        rows = [r for r in rows if not r.low_coverage]
+        rows = [r for r in rows if not r.low_coverage and not getattr(r, "rank_excluded", False)]
+    names = _theme_names(session)
+    levels = {t.id: t.theme_level for t in session.execute(select(Theme)).scalars().all()}
+    rows = [r for r in rows if levels.get(r.theme_id) in {None, 2, 3} or include_low_coverage]
     frame = pd.DataFrame(
         [
             {

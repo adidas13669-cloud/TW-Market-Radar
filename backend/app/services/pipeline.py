@@ -86,6 +86,16 @@ def run_calculation(
     sector_metrics = compute_entity_timeseries_metrics(sector_daily, "theme_id")
     sector_metrics = score_cross_section(sector_metrics, weights=weights)
     sector_metrics = attach_emerging_metric(sector_metrics, entity_col="theme_id", lag=emerging_lag)
+
+    if snapshot.themes is not None and not snapshot.themes.empty:
+        name_col = "name" if "name" in snapshot.themes.columns else "theme_name"
+        themes = snapshot.themes.rename(columns={name_col: "theme_name"})
+        keep = [c for c in ("theme_id", "theme_name", "theme_level", "concentrated_ok", "theme_category") if c in themes.columns]
+        if "theme_id" not in themes.columns and "id" in snapshot.themes.columns:
+            themes = snapshot.themes.rename(columns={"id": "theme_id", "name": "theme_name"})
+            keep = [c for c in ("theme_id", "theme_name", "theme_level", "concentrated_ok") if c in themes.columns]
+        sector_metrics = sector_metrics.merge(themes[keep], on="theme_id", how="left")
+
     sector_metrics = attach_coverage(
         sector_metrics,
         snapshot.mapping,
@@ -93,15 +103,6 @@ def run_calculation(
         stock_daily,
         min_coverage=get_settings().min_coverage_ratio,
     )
-
-    if snapshot.themes is not None and not snapshot.themes.empty:
-        name_col = "name" if "name" in snapshot.themes.columns else "theme_name"
-        themes = snapshot.themes.rename(columns={name_col: "theme_name"})
-        keep = [c for c in ("theme_id", "theme_name") if c in themes.columns]
-        if "theme_id" not in themes.columns and "id" in snapshot.themes.columns:
-            themes = snapshot.themes.rename(columns={"id": "theme_id", "name": "theme_name"})
-            keep = ["theme_id", "theme_name"]
-        sector_metrics = sector_metrics.merge(themes[keep], on="theme_id", how="left")
 
     return CalculationResult(
         stock_daily=stock_daily,

@@ -58,13 +58,12 @@ def test_mapping_audit_reports_invalid_unmapped_and_multi_theme(tmp_path):
     session.add(Security(id="2330", name="TSMC", market="TWSE"))
     session.add(Security(id="9999", name="FAKE", market="TWSE"))
     session.add(Security(id="1101", name="台泥", market="TWSE"))
-    session.add(SecurityTheme(security_id="2330", theme_id="SEMI"))
-    session.add(SecurityTheme(security_id="9999", theme_id="SEMI"))
+    session.add(SecurityTheme(security_id="2330", theme_id="SEMI", mapping_version="seed-v1"))
+    session.add(SecurityTheme(security_id="9999", theme_id="SEMI", mapping_version="seed-v1"))
     session.add(DailyQuote(security_id="2330", trade_date=date(2026, 8, 28), close=100))
     session.add(DailyQuote(security_id="1101", trade_date=date(2026, 8, 28), close=30))
     session.add(
         MappingCatalog(
-            id=1,
             mapping_version="seed-v1",
             mapping_source="seed",
             effective_from=date(2026, 6, 1),

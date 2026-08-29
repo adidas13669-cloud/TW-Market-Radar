@@ -61,6 +61,7 @@ class Settings(BaseSettings):
     weight_continuity: float = Field(default=0.10)
     weight_margin: float = Field(default=0.05)
     min_coverage_ratio: float = Field(default=0.80)
+    min_theme_members: int = Field(default=3)
 
     @property
     def score_weights(self) -> ScoreWeights:

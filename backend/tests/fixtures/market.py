@@ -108,15 +108,15 @@ def seed_snapshot(session, snapshot: MarketSnapshot) -> None:
             theme_id = str(row.get("theme_id") or row.get("id"))
             name = str(row.get("name") or row.get("theme_name") or theme_id)
             theme_names[theme_id] = name
-            session.merge(Theme(id=theme_id, name=name))
+            session.merge(Theme(id=theme_id, name=name, theme_level=3, theme_category="seed", concentrated_ok=True))
     securities = set(snapshot.flows["security_id"].astype(str))
     for sid in securities:
         session.merge(Security(id=sid, name=sid, market="TWSE", is_active=True))
     for _, row in snapshot.mapping.iterrows():
         tid = str(row["theme_id"])
         if tid not in theme_names:
-            session.merge(Theme(id=tid, name=tid))
-        session.merge(SecurityTheme(security_id=str(row["security_id"]), theme_id=tid))
+            session.merge(Theme(id=tid, name=tid, theme_level=3, concentrated_ok=True, theme_category="seed"))
+        session.merge(SecurityTheme(security_id=str(row["security_id"]), theme_id=tid, mapping_version="seed-v1"))
     for _, row in snapshot.flows.iterrows():
         session.merge(
             DailyInstitutionalFlow(

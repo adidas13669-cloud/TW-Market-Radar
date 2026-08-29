@@ -38,6 +38,10 @@ class SectorRadarRow(BaseModel):
     flow_member_count: int | None = None
     coverage_ratio: float | None = None
     low_coverage: bool = False
+    thin_membership: bool = False
+    rank_excluded: bool = False
+    mapping_version: str | None = None
+    theme_level: int | None = None
 
 
 class ConstituentRow(BaseModel):

@@ -53,10 +53,11 @@ Audit a stored snapshot (offline; no live HTTP):
 PYTHONPATH=backend python -m app.cli.audit --date 2026-08-28
 ```
 
-Theme membership seed: `data/theme_mapping/seed_themes.csv` plus
-`data/theme_mapping/mapping_meta.json`. The five seed themes are development
-fixtures, not production sector coverage. GitHub Actions runs `pytest` only
-(no live TWSE/TPEx).
+Theme membership: development seed `data/theme_mapping/seed_themes.csv`;
+production-oriented hierarchy `data/theme_mapping/v2` (`v2-tax-1`, L1→L3).
+Validate with `PYTHONPATH=backend python -m app.cli.taxonomy`.
+GitHub Actions runs `pytest` only (no live TWSE/TPEx).
+
 
 Pipeline per date: fetch → validate → normalize to TWD notional → persist raw →
 calculate metrics → score universe → persist radar snapshot. Holidays are skipped

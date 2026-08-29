@@ -16,7 +16,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--end", required=True, help="YYYY-MM-DD")
     parser.add_argument("--database-url", default=None)
     parser.add_argument("--payload-dir", default="data/raw_payloads")
-    parser.add_argument("--mapping", default="data/theme_mapping/seed_themes.csv")
+    parser.add_argument("--mapping", default="data/theme_mapping/v2")
     parser.add_argument("--force", action="store_true", help="Re-fetch dates already marked SUCCESS")
     args = parser.parse_args(argv)
     start = date.fromisoformat(args.start)

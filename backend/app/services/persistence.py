@@ -4,28 +4,76 @@ from datetime import date
 from decimal import Decimal
 
 import pandas as pd
-from sqlalchemy import delete, select
+from sqlalchemy import delete, func, select
 from sqlalchemy.orm import Session
 
 from app.models.entities import (
     DailyInstitutionalFlow,
     DailyMargin,
     DailyQuote,
+    MappingCatalog,
     SectorDailyMetric,
     SecurityTheme,
     StockDailyMetric,
     Theme,
 )
 from app.services.pipeline import CalculationResult, MarketSnapshot, run_calculation
+from app.taxonomy.loader import CURRENT_MAPPING_VERSION, mapping_effective_on
 
 
-def snapshot_from_db(session: Session) -> MarketSnapshot:
-    mapping_rows = session.execute(select(SecurityTheme)).scalars().all()
+def current_mapping_version(session: Session, asof: date | None = None) -> str | None:
+    rows = session.execute(select(MappingCatalog)).scalars().all()
+    if not rows:
+        versions = [v for v in session.execute(select(SecurityTheme.mapping_version).distinct()).scalars().all() if v]
+        return versions[0] if versions else None
+    if asof is None:
+        asof = session.execute(select(func.max(DailyQuote.trade_date))).scalar()
+    effective = [
+        r
+        for r in rows
+        if asof is None or mapping_effective_on(asof, effective_from=r.effective_from, effective_to=r.effective_to)
+    ]
+    if not effective:
+        effective = list(rows)
+    effective.sort(key=lambda r: r.effective_from, reverse=True)
+    return effective[0].mapping_version
+
+
+def snapshot_from_db(session: Session, asof: date | None = None, mapping_version: str | None = None) -> MarketSnapshot:
+    asof = asof or session.execute(select(func.max(DailyQuote.trade_date))).scalar()
+    version = mapping_version or current_mapping_version(session, asof=asof)
+    mapping_q = select(SecurityTheme)
+    if version:
+        mapping_q = mapping_q.where(SecurityTheme.mapping_version == version)
+    mapping_rows = session.execute(mapping_q).scalars().all()
+    if asof is not None:
+        kept = []
+        for r in mapping_rows:
+            start = r.effective_from
+            end = r.effective_to
+            if start and asof < start:
+                continue
+            if end and asof > end:
+                continue
+            kept.append(r)
+        mapping_rows = kept
     mapping = pd.DataFrame(
         [{"security_id": r.security_id, "theme_id": r.theme_id} for r in mapping_rows]
     )
+    theme_rows = session.execute(select(Theme)).scalars().all()
     themes = pd.DataFrame(
-        [{"theme_id": t.id, "name": t.name} for t in session.execute(select(Theme)).scalars().all()]
+        [
+            {
+                "theme_id": t.id,
+                "name": t.name,
+                "theme_name": t.name,
+                "theme_level": t.theme_level,
+                "parent_theme_id": t.parent_theme_id,
+                "theme_category": t.theme_category,
+                "concentrated_ok": bool(t.concentrated_ok),
+            }
+            for t in theme_rows
+        ]
     )
     flows = pd.DataFrame(
         [
@@ -74,8 +122,10 @@ def snapshot_from_db(session: Session) -> MarketSnapshot:
     return MarketSnapshot(mapping=mapping, flows=flows, quotes=quotes, margins=margins, themes=themes)
 
 
-def persist_calculation(session: Session, result: CalculationResult) -> None:
-    session.execute(delete(SectorDailyMetric))
+def persist_calculation(session: Session, result: CalculationResult, mapping_version: str | None = None) -> None:
+    version = mapping_version or CURRENT_MAPPING_VERSION
+    session.execute(delete(SectorDailyMetric).where(SectorDailyMetric.mapping_version == version))
+    session.execute(delete(SectorDailyMetric).where(SectorDailyMetric.mapping_version.is_(None)))
     session.execute(delete(StockDailyMetric))
     for _, row in result.sector_metrics.iterrows():
         session.add(
@@ -104,6 +154,9 @@ def persist_calculation(session: Session, result: CalculationResult) -> None:
                 flow_member_count=_int(row.get("flow_member_count")),
                 coverage_ratio=_dec(row.get("coverage_ratio")),
                 low_coverage=bool(row.get("low_coverage") is True or row.get("low_coverage") == 1),
+                thin_membership=bool(row.get("thin_membership") is True or row.get("thin_membership") == 1),
+                rank_excluded=bool(row.get("rank_excluded") is True or row.get("rank_excluded") == 1),
+                mapping_version=version,
             )
         )
     for _, row in result.stock_metrics.iterrows():
@@ -129,9 +182,10 @@ def persist_calculation(session: Session, result: CalculationResult) -> None:
     session.flush()
 
 
-def recompute(session: Session) -> CalculationResult:
-    result = run_calculation(snapshot_from_db(session))
-    persist_calculation(session, result)
+def recompute(session: Session, asof: date | None = None, mapping_version: str | None = None) -> CalculationResult:
+    version = mapping_version or current_mapping_version(session, asof=asof) or CURRENT_MAPPING_VERSION
+    result = run_calculation(snapshot_from_db(session, asof=asof, mapping_version=version))
+    persist_calculation(session, result, mapping_version=version)
     return result
 
 

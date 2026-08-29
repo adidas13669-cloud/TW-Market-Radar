@@ -42,19 +42,24 @@ class Theme(Base):
     id: Mapped[str] = mapped_column(String(32), primary_key=True)
     name: Mapped[str] = mapped_column(String(64), nullable=False)
     description: Mapped[str | None] = mapped_column(String(255), nullable=True)
+    theme_level: Mapped[int | None] = mapped_column(Integer, nullable=True)
+    parent_theme_id: Mapped[str | None] = mapped_column(String(32), ForeignKey("themes.id"), nullable=True)
+    theme_category: Mapped[str | None] = mapped_column(String(32), nullable=True)
+    concentrated_ok: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
     mapping_version: Mapped[str | None] = mapped_column(String(32), nullable=True)
     mapping_source: Mapped[str | None] = mapped_column(String(255), nullable=True)
     effective_from: Mapped[date | None] = mapped_column(Date, nullable=True)
+    effective_to: Mapped[date | None] = mapped_column(Date, nullable=True)
 
     security_links: Mapped[list["SecurityTheme"]] = relationship(back_populates="theme")
     metrics: Mapped[list["SectorDailyMetric"]] = relationship(back_populates="theme")
 
 
 class SecurityTheme(Base):
-    """Many-to-many: one security may belong to multiple themes."""
+    """Many-to-many: one security may belong to multiple themes (versioned)."""
 
     __tablename__ = "security_themes"
-    __table_args__ = (UniqueConstraint("security_id", "theme_id", name="uq_security_theme"),)
+    __table_args__ = (UniqueConstraint("security_id", "theme_id", "mapping_version", name="uq_security_theme_ver"),)
 
     security_id: Mapped[str] = mapped_column(
         String(16), ForeignKey("securities.id"), primary_key=True
@@ -62,6 +67,13 @@ class SecurityTheme(Base):
     theme_id: Mapped[str] = mapped_column(
         String(32), ForeignKey("themes.id"), primary_key=True
     )
+    mapping_version: Mapped[str] = mapped_column(String(32), primary_key=True, default="seed-v1")
+    effective_from: Mapped[date | None] = mapped_column(Date, nullable=True)
+    effective_to: Mapped[date | None] = mapped_column(Date, nullable=True)
+    confidence: Mapped[Decimal | None] = mapped_column(Ratio, nullable=True)
+    rationale: Mapped[str | None] = mapped_column(Text, nullable=True)
+    source: Mapped[str | None] = mapped_column(String(255), nullable=True)
+    inherited: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
 
     security: Mapped[Security] = relationship(back_populates="theme_links")
     theme: Mapped[Theme] = relationship(back_populates="security_links")
@@ -165,6 +177,9 @@ class SectorDailyMetric(Base):
     flow_member_count: Mapped[int | None] = mapped_column(Integer, nullable=True)
     coverage_ratio: Mapped[Decimal | None] = mapped_column(Ratio, nullable=True)
     low_coverage: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
+    thin_membership: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
+    rank_excluded: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
+    mapping_version: Mapped[str | None] = mapped_column(String(32), nullable=True)
 
     theme: Mapped[Theme] = relationship(back_populates="metrics")
 
@@ -193,14 +208,14 @@ class StockDailyMetric(Base):
 
 
 class MappingCatalog(Base):
-    """Seed/production mapping provenance. Seed mappings are not a full taxonomy."""
+    """Versioned mapping provenance. Rows are not overwritten across versions."""
 
     __tablename__ = "mapping_catalog"
 
-    id: Mapped[int] = mapped_column(Integer, primary_key=True)
-    mapping_version: Mapped[str] = mapped_column(String(32), nullable=False)
+    mapping_version: Mapped[str] = mapped_column(String(32), primary_key=True)
     mapping_source: Mapped[str] = mapped_column(String(255), nullable=False)
     effective_from: Mapped[date] = mapped_column(Date, nullable=False)
+    effective_to: Mapped[date | None] = mapped_column(Date, nullable=True)
     production_ready: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
     notes: Mapped[str | None] = mapped_column(Text, nullable=True)
 

@@ -21,6 +21,8 @@ def attach_coverage(
         out["flow_member_count"] = 0
         out["coverage_ratio"] = pd.NA
         out["low_coverage"] = True
+        out["thin_membership"] = True
+        out["rank_excluded"] = True
         return out
 
     threshold = min_coverage if min_coverage is not None else get_settings().min_coverage_ratio
@@ -72,4 +74,14 @@ def attach_coverage(
     flow_r = out["flow_member_count"] / denom
     out["coverage_ratio"] = pd.concat([priced_r, flow_r], axis=1).min(axis=1)
     out["low_coverage"] = out["coverage_ratio"].fillna(0) < threshold
+    min_members = get_settings().min_theme_members
+    out["thin_membership"] = out["member_count"] < min_members
+    if "concentrated_ok" not in out.columns:
+        out["concentrated_ok"] = False
+    else:
+        out["concentrated_ok"] = out["concentrated_ok"].fillna(False).astype(bool)
+    if "theme_level" in out.columns and out["theme_level"].notna().any():
+        out["rank_excluded"] = out["low_coverage"] | (out["thin_membership"] & ~out["concentrated_ok"])
+    else:
+        out["rank_excluded"] = out["low_coverage"]
     return out
